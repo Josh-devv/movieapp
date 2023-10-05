@@ -35,7 +35,7 @@ export default function MovieSelect() {
     fetchMovies();
   }, [pages]);
 
-  console.log(popularMovies);
+  //console.log(popularMovies);
 
   return (
 

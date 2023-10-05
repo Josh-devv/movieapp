@@ -13,16 +13,14 @@ export default function Home(){
                <div className=" home-page">
                     <div className="pfpf">
                         <h1 className="">Discover free Movies</h1>
-                        <p className="">Thousands of movie & TV shows available just for you!</p>
+                        <p className="">Thousands of Movies & TV shows available just for you on JoshFix!</p>
                         <Link to={`/movies`}>
                             <button>Explore</button>
                         </Link>
                         
                     </div>
                     
-                    <div className="pfp">
-                        
-                    </div>
+                    
                </div>
                
             </section>
