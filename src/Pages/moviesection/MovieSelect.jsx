@@ -64,12 +64,13 @@ export default function MovieSelect() {
                         src={`https://image.tmdb.org/t/p/w500${mov.poster_path}`}
                         alt=""
                       />
+                      
                     </div>
 
                     <div className="head-info">
-                      <span className="info pl-3">{mov.title}</span>
+                      <span className="info">{mov.title}</span>
                       <div className="ratings ">
-                        <small className="d-flex justify-content-center align-items-center">
+                        <small className="">
                           <IoMdStar size={20} color="yellow" />
                           {mov.vote_average}
                         </small>
