@@ -7,6 +7,7 @@ import SearchPage from './Pages/search/SearchPage';
 import Navbar from './components/navbar/Navbar';
 import Home from './Pages/home/Home';
 import './App.css'
+import MovieSelect from './Pages/Movies/movieselect';
 
 const App = () => {
     return (
@@ -19,7 +20,8 @@ const App = () => {
                   
               <Route exact path='/' Component={MovieSection}/>
               <Route path='/movie/:id' Component={MovieDesc}/>
-              <Route path='/search/:title' Component={SearchPage}/>        
+              <Route path='/search/:title' Component={SearchPage}/>    
+              <Route path='/movies' Component={MovieSelect} />    
               
             </Routes>
           </Router>

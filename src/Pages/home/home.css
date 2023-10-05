@@ -58,26 +58,29 @@
   .home-page p{
     min-width: 500px;
   }
+  .home-banner img{}
   .home-banner{
     font-family: var(--font-raleway);
-    background: url('../../Assets/last.jpg') no-repeat center center/cover;
     height: 100vh;
-    background-size: cover;
     width: 100%;
-    color: white
+    position: relative;
+    color: white;
+    z-index: 1;
   }
-  .home-banner::after{
-    content: '';
+  .home-banner::before{
     position: absolute;
-    top: 0;
+    content: '';
     left: 0;
-    width: 100%;
+    transform: scaleX(-1);
     height: 100vh;
-    z-index: 1; /* for it to appear above every other elements*/
-    background: rgba(0, 0, 0, 0.6);
-    box-shadow: inset 120px 100px 250px #000000;
+    width: 100%;
+    background: url('../../Assets/bgg2.jpg') no-repeat center center/cover;
   }
-
+  @media screen and (max-width: 768px) {
+    .home-banner::before{
+      background-position: left;
+    }
+  }
   @media screen and (max-width: 768px) {
     .home-banner img{
       display: none;

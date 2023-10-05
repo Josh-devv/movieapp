@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../../components/navbar/Navbar";
-import ppp from '../../Assets/mobile-0819.jpg'
-
+import ppp from '../../Assets/newmob-removebg-preview.png'
+import { Link } from "react-router-dom";
 import './home.css'
 
 
@@ -14,11 +14,14 @@ export default function Home(){
                     <div className="pfpf">
                         <h1 className="">Discover free Movies</h1>
                         <p className="">Thousands of movie & TV shows available just for you!</p>
-                        <button>Explore</button>
+                        <Link to={`/movies`}>
+                            <button>Explore</button>
+                        </Link>
+                        
                     </div>
                     
                     <div className="pfp">
-                        <img src={ppp} className="" />
+                        
                     </div>
                </div>
                
