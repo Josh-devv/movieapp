@@ -29,7 +29,7 @@ export default function Popular({ popularMovies }) {
                       <div className="head-info">
                             <span className="info pl-3">{mov.title}</span>
                         <div className='container-fluid ratings d-flex'>
-                            <small className="d-flex justify-content-center align-items-center"><IoMdStar size={20} color="yellow" />{mov.vote_average}</small>
+                            <small className="d-flex justify-content-center "><IoMdStar size={20} color="yellow" />{mov.vote_average}</small>
                             <small className=' year'>{mov.release_date.split("-")[0]}</small>
                         </div>
                       </div>

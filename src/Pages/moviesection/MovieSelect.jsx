@@ -59,7 +59,7 @@ export default function MovieSelect() {
                   <FaSpinner />
                 ) : (
                   <>
-                    <div className="carou-w color-white" key={mov.id}>
+                    <div className="carou-we color-white" key={mov.id}>
                       <img
                         src={`https://image.tmdb.org/t/p/w500${mov.poster_path}`}
                         alt=""
