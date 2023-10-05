@@ -180,7 +180,7 @@ console.log(mdetails);
                     </div>
 
                     <div className="head-info">
-                      <span className="info pl-3">{week.title}</span>
+                      <span className="info in pl-3">{week.title}</span>
                       <div className="container-fluid ratings">
                         <small className="d-flex justify-content-center align-items-center">
                           <IoMdStar size={20} color="yellow" />
@@ -205,7 +205,7 @@ console.log(mdetails);
           <div>
             <h5 className="container-fluid genre pt-5">Weekly Rated Movies</h5>
             <div className="head-app2">
-              <div className="app2 container-fluid">
+              <div className="app2">
                 {weekly.map((week) => (
                   <Link
                     to={{

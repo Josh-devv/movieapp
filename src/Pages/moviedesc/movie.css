@@ -191,7 +191,7 @@ p {
 }
 .info{
   padding: 0;
-  width: 100%;
+  width: 150px;
   margin: 0 1rem;
 }
 .desc-carou {
@@ -435,13 +435,22 @@ p {
   .head-app2::-webkit-scrollbar, .app2 a::-webkit-scrollbar {
     display: none;
   }
+  .headd{
+    width: 100%;
+  }
+  .headd img{
+    width: 100%;
+  }
   .app2 a{
     overflow: hidden;
   }
-  .head-info span, .head-info div{
+  .head-info .in, .head-info div{
     display: none;
   }
   .desc-button1 span{
     font-size: 12px;
+  }
+  .ratings{
+    width: 180px;
   }
 }
