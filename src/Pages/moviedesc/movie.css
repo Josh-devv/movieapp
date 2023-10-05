@@ -225,9 +225,14 @@ p {
 .app2 a{
   overflow: hidden;
 }
-.ratings{
+.desc-info h1, span,  p{
+  width: 100%;
+}
+.rating{
   color: white;
-  padding: 10px;
+  padding: 3px 5px;
+  margin-right: 10px;
+  border: 1px solid white;
 }
 
 

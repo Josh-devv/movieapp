@@ -30,6 +30,13 @@ export default function Navbar(){
       el.classList.add('types')
     }
 
+    const handleSubmit =(e)=>{
+      e.preventDefault()
+      let inp = document.querySelector('.uu')
+      window.location.href = `/search/${inp.value}`
+    }
+
+
     return(
         <body className="body-nav">
           
@@ -52,13 +59,16 @@ export default function Navbar(){
                       <GoSearch size={20} color="blue"/>
                     </Link>
                   </div>
-
-                  <input type="text" value={searchQuery}                    
+                  <form onSubmit={handleSubmit}>
+                    <input className="uu" type="text" value={searchQuery}                    
                       onChange={(e) => {
                       setSearchQuery(e.target.value)
+                      
                     }}
                     placeholder="Search for something"
                     />
+                  </form>
+                  
                 </div>
 
                 <div className="menu">
@@ -93,12 +103,14 @@ export default function Navbar(){
                                     <GoSearch size={20} color="blue"/>
                                   </Link>
                                 </div>
-
-                                <input type="text" value={searchQuery}                    
+                                <form onSubmit={handleSubmit}>
+                                  <input type="text" value={searchQuery}                    
                                     onChange={(e) => {
                                     setSearchQuery(e.target.value)}}
                                     placeholder="Search for something"
                                     />
+                                </form>
+                                
                             </div>
                         </div>                                      
                     </div>}

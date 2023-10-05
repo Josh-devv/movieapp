@@ -20,7 +20,7 @@ export default function Home(){
                         
                     </div>
                     
-                    
+                    <div className="darkbg"></div>
                </div>
                
             </section>

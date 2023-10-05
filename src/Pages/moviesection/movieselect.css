@@ -34,7 +34,7 @@
 }
 
 @media screen and (max-width: 580px) {
-  .carou-w {
+  .carou-we {
     width: 70%;
     height: auto;
   }
@@ -51,5 +51,10 @@
     width: 100%;
 
     grid-template-columns: 1fr 1fr 1fr;
+  }
+  .app3 .carou-w{
+    width: 80%;
+    height: 80%;
+    display: block;
   }
 }
