@@ -49,19 +49,6 @@ export default function MovieSection(){
      
     }, []);
 
-
-    /*
-<div className="container-fluid app">
-            <h1 className="movie-head">Josh Flix Unchained</h1>
-
-            <div className="search">
-                <Link to={`/search/${searchQuery}`} className='pl-3 pr-2'>
-                    <GoSearch size={20} />
-                </Link>
-                <input type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}placeholder="Search for something"/>
-            </div>
-        </div>
-    */
   
    return ( 
     <>

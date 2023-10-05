@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../../components/navbar/Navbar";
-import ppp from '../../Assets/newmob-removebg-preview.png'
+
 import { Link } from "react-router-dom";
 import './home.css'
 

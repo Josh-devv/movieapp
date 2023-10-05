@@ -6,7 +6,7 @@ import MovieDesc from "./Pages/moviedesc/MovieDesc";
 import SearchPage from "./Pages/search/SearchPage";
 import Navbar from "./components/navbar/Navbar";
 import Home from "./Pages/home/Home";
-import MovieSelect from "./Pages/Movies/movieselect";
+//import MovieSelect from "./Pages/Movies/movieselect";
 import "./App.css";
 
 
@@ -19,7 +19,7 @@ const App = () => {
             <Route exact path="/" Component={MovieSection} />
             <Route path="/movie/:id" Component={MovieDesc} />
             <Route path="/search/:title" Component={SearchPage} />
-            <Route path="/movies" Component={MovieSelect} />
+            
           </Routes>
         </Router>
       </WatchlistProvider>
