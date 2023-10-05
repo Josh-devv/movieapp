@@ -6,7 +6,7 @@ import MovieDesc from "./Pages/moviedesc/MovieDesc";
 import SearchPage from "./Pages/search/SearchPage";
 import Navbar from "./components/navbar/Navbar";
 import Home from "./Pages/home/Home";
-import MovieSelect from "./Pages/Movies/movieselect";
+import MovieSelect from "./Pages/Movies/MovieSelect";
 import "./App.css";
 
 
