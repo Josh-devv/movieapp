@@ -94,7 +94,7 @@
       padding: 0;
     }
     .home-banner::after{
-      height: 100%;
+      height: 100vh;
     }
     .home-page p{
       min-width: 0;

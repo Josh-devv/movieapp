@@ -40,6 +40,9 @@
   z-index: 1;
   position: absolute;
 }
+.rating, .year, .mins{
+  padding: 20px;
+}
 .btns {
   width: 100%;
   display: flex;
@@ -193,6 +196,10 @@ p {
   padding: 0;
   width: 150px;
   margin: 0 1rem;
+  white-space: nowrap;
+  
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .desc-carou {
   display: none;
