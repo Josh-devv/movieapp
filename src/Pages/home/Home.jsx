@@ -13,7 +13,7 @@ export default function Home(){
                <div className=" home-page">
                     <div className="pfpf">
                         <h1 className="">Discover free Movies</h1>
-                        <p className="">Thousands of Movies & TV shows available just for you on JoshFix!</p>
+                        <p className="">Thousands of Movies & TV shows available just for you on JoshFlix!</p>
                         <Link to={`/movies`}>
                             <button>Explore</button>
                         </Link>
