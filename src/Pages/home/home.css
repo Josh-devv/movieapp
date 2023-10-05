@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300");
+
+
+
+:root {
+  --font-roboto: "Roboto Slab", serif;
+  --font-raleway: "Raleway", sans-serif;
+  --font-montserrat: "Montserrat", monospace;
+}
+
+
+
+
+
+.home-banner h1{
+    font-size: 90px;
+    font-weight: bold;
+    width: 80%;
+  }
+  .home-page{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000;
+    align-items: center;
+  }
+  .pfpf{
+    width: 65%;
+  }
+  .pfp{
+    display: flex;
+    justify-content: center;
+    width: 35%;
+  }
+  .home-page button{
+    background-color: rgb(4, 4, 252);
+    box-shadow: 0px 0px 40px #22365f;
+    filter: brightness(150%);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
+    width: 250px;
+    font-family: monospace;
+    padding: 8px 60px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+  }
+  .home-page p{
+    font-size: 14px;
+    font-weight: lighter;
+    padding-left: 0;
+    font-family: var(--font-montserrat);
+  }
+  .home-page p{
+    min-width: 500px;
+  }
+  .home-banner{
+    font-family: var(--font-raleway);
+    background: url('../../Assets/last.jpg') no-repeat center center/cover;
+    height: 100vh;
+    background-size: cover;
+    width: 100%;
+    color: white
+  }
+  .home-banner::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1; /* for it to appear above every other elements*/
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: inset 120px 100px 250px #000000;
+  }
+
+  @media screen and (max-width: 768px) {
+    .home-banner img{
+      display: none;
+    }
+    .home-banner h1{
+      text-align: center;
+    }
+    .home-page{
+      flex-direction: column;
+      justify-content: space-between;
+      
+      width: 100%;
+      height: 100vh;
+      padding: 0;
+    }
+    .home-banner::after{
+      height: 100%;
+    }
+    .home-page p{
+      min-width: 0;
+      text-align: center;
+      width: 95%;
+      font-size: 25px;
+    }
+    .home-page img{
+      width: 350px;
+    }
+    .home-page button{
+      width: 150px;
+      width: 95%;
+      margin-top: 20px;
+      font-size: 20px;
+    }
+    .pfpf{
+      text-align: center;
+      width: 100%;
+      margin-top: auto;
+      margin-bottom: auto;
+     }
+     .pfpf button{
+       margin: 0 auto;
+       font-size: 25px;
+       width: 350px;
+     }
+     .pfpf h1{
+      width: 100%;
+    
+      font-size: 90px;
+      text-align: center;
+    }
+  }
