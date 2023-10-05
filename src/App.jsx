@@ -17,9 +17,9 @@ const App = () => {
         <Router>
           <Routes>
             <Route exact path="/" Component={MovieSection} />
+            <Route path="/movies" Component={MovieSelect} />
             <Route path="/movie/:id" Component={MovieDesc} />
             <Route path="/search/:title" Component={SearchPage} />
-            <Route path="/movies" Component={MovieSelect} />
           </Routes>
         </Router>
       </WatchlistProvider>
