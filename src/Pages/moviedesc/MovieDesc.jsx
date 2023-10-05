@@ -142,7 +142,10 @@ console.log(mdetails);
                 <button className="desc-button"> Watch Now</button>
                 <button className="desc-button1" onClick={handleAddToWatchlist}>
                   <HiOutlinePlus />
-                  Add to WatchList
+                  <span>
+                    Add to WatchList
+                  </span>
+                  
                 </button>
               </div>
             </div>
