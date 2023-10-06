@@ -54,7 +54,7 @@
 
 
 .popup{
-    width: 20px;
+    width: 50px;
     background-color: rgba(0, 0, 0);
     position: absolute;
     border: 1px solid white;
@@ -68,7 +68,7 @@
     transform: translate(-50%, -50%);
     justify-content: center;
     align-items: center;
-    animation: up .5s ease-in forwards, exp 1s ease-out forwards 1s, down .3s ease-in forwards 2s;
+    animation: up .2s ease-in forwards, exp 1s ease-out forwards 1s, down .3s ease-in forwards 2s;
 }
 @keyframes up {
     0%{
@@ -113,9 +113,9 @@
     .popup{
         background-color: white;
         color: black;
-        font-size: 1px;
+        font-size: 0px;
         font-weight: bold;
-        width: 10px;
+        width: 50px;
     }
     @keyframes exp {
         0%{
@@ -124,11 +124,13 @@
         }
         30%{
             width: 70%;
-            font-size: 15px;
+
+            font-size: 10px;
         }
         100%{
             width: 70%;
-            font-size: 15px;
+            font-size: 10px;
+            
             color: white;
         }
     
