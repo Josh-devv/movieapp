@@ -54,55 +54,52 @@
 
 
 .popup{
-    width: 50px;
-    background-color: rgba(0, 0, 0);
+    width: 90px;
+    background-color: white;
     position: absolute;
-    border: 1px solid white;
+    
     color: white;
     border-radius: 50px;
     display: flex;
     color: transparent;
     top: 50%;
+    opacity: 1;
     left: 50%;
     height: 50px;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -0%);
     justify-content: center;
     align-items: center;
-    animation: up .2s ease-in forwards, exp 1s ease-out forwards 1s, down .3s ease-in forwards 2s;
+    animation: up .3s ease forwards, exp .3s ease-out forwards .5s, down .2s ease-in forwards 1.2s;
 }
 @keyframes up {
     0%{
-        top: 100%;
-      
+        top: 10%; 
+        display: flex;
+        opacity: ;
     }
     100%{
-        
-        top: 50%;
+        top: 20%;
+        opacity: ;
     }
 }
 @keyframes exp {
     0%{
-        width: 0%;
-        
+        width: 80%;      
     }
     30%{
-        width: 30%;
+        width: 35%;
     }
     100%{
-        width: 30%;
-        
-        color: white;
+        width: 40%;
+        color: black;
     }
-
 }
 @keyframes down {
     0%{
-        top: 80%;
-        color: transparent;
+        top: 100%;
+        
     }
-   
     100%{
-        color: transparent;
         top: 100%;
         opacity: 0;
     }

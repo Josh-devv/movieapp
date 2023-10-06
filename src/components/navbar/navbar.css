@@ -36,7 +36,7 @@
     align-items: center;
     height: 70px;
     justify-content: space-between;
-    z-index: 100000000000;
+    z-index: 1000000000000000000;
   
   }
   #sticky:first-child{

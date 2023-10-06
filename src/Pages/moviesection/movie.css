@@ -16,6 +16,44 @@
   .head-app2 Link:hover{
     text-decoration: none;
   }
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-button-prev, .swiper-button-next{
+    height: 50px;
+    width: 50px;
+    background: white;
+    z-index: 10000;
+  }
+  .swiper-button-prev::after, .swiper-button-next::after{
+    position: absolute;
+    content: '>';
+    color: black;
+    
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: transparent;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .mySwiper{
+    background: #000;
+    z-index: 1;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
   .head-app2{
     overflow-x: scroll;
     width: 100%;

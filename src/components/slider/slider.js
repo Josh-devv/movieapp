@@ -5,7 +5,7 @@ export function setupMovieSliderScroll(movieSlider) {
     
   
     // Set the interval for automatic scrolling (adjust the duration as needed)
-    const scrollInterval = 5000; // 3 seconds
+    const scrollInterval = 2000; // 3 seconds
   
     // Function to scroll the container to the next position
     function scrollContainer() {
@@ -13,10 +13,10 @@ export function setupMovieSliderScroll(movieSlider) {
       const currentScroll = movieSlider.scrollLeft;
       const containerWidth = movieSlider.clientWidth;
       const scrollWidth = movieSlider.scrollWidth;
-      const scrollAmount = containerWidth / 10; // You can adjust this value as needed
+      const devWidth = window.innerWidth
+      const scrollAmount = containerWidth / Math.ceil(devWidth / 200); // You can adjust this value as needed
   
-      let newScroll = currentScroll + scrollAmount;
-  
+      let newScroll = currentScroll + Math.floor(scrollAmount);
       // Reset to the beginning if we reach the end
       if (newScroll + containerWidth >= scrollWidth) {
         newScroll = 0;

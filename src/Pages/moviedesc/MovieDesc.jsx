@@ -202,7 +202,7 @@ export default function MovieDesc() {
 
                   <div className="head-info">
                     <span className="info in pl-3">{week.title}</span>
-                    <div className="container-fluid ratings">
+                    <div className="container-fluid ratings-m">
                       <small className="d-flex justify-content-center align-items-center">
                         <IoMdStar size={20} color="yellow" />
                         {week.vote_average}
@@ -234,7 +234,7 @@ export default function MovieDesc() {
                   }}
                   key={week.id}
                 >
-                  <div className="carou-w color-white">
+                  <div className=".carou-m color-white">
                     <img
                       src={`https://image.tmdb.org/t/p/w500${week.poster_path}`}
                       alt=""
@@ -243,7 +243,7 @@ export default function MovieDesc() {
 
                   <div className="head-info">
                     <span className="info">{week.title}</span>
-                    <div className="cont ratings d-flex">
+                    <div className="cont ratings-m">
                       <small className="star">
                         <IoMdStar size={20} color="yellow" />
                         {week.vote_average}

@@ -14,4 +14,9 @@
   --font-montserrat: "Montserrat", monospace;
 }
 
-
+.sli{
+  width: 100vw;
+}
+.sli div{
+  display: flex;
+}

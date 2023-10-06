@@ -12,8 +12,6 @@ export default function Navbar(){
     const [searchQuery, setSearchQuery] = useState('')
     const [menu, setMenu] = useState(false)
 
-    
-
     //for the blur background for navbar
     window.onscroll = () => {
             let blur = document.querySelector('.blur')
@@ -111,10 +109,12 @@ export default function Navbar(){
                                     <GoSearch size={20} color="blue"/>
                                   </Link>
                                 </div>
-                                <form onSubmit={handleSubmit}>
+                                <form onSubmit={handleSubmit1}>
                                   <input className="u2" type="text" value={searchQuery}                    
                                     onChange={(e) => {
-                                    setSearchQuery(e.target.value)}}
+                                    setSearchQuery(e.target.value)
+                                  
+                                  }}
                                     placeholder="Search for something"
                                     />
                                 </form>
