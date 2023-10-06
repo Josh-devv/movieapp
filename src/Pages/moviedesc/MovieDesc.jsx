@@ -270,14 +270,14 @@ export default function MovieDesc() {
             desktop: {
               breakpoint: {
                 max: 3000,
-                min: 1366,
+                min: 1280,
               },
               items: 7,
               partialVisibilityGutter: 40,
             },
             desk: {
               breakpoint: {
-                max: 1366,
+                max: 1280,
                 min: 1024,
               },
               items: 6,
@@ -319,7 +319,7 @@ export default function MovieDesc() {
         >
           {weekly.map((mov) => (
             <Link to={{ pathname: `/movie/${mov.id}` }} key={mov.id}>
-              <div className="carou-w color-white">
+              <div className="carou-we color-white">
                 <img
                   src={`https://image.tmdb.org/t/p/w500${mov.poster_path}`}
                   alt=""
