@@ -11,8 +11,6 @@
 
 
 
-
-
 .desc-body {
   font-family: var(--font-raleway);
   background-color: black;
@@ -235,6 +233,9 @@ p {
   border: 1px solid white;
 }
 
+.descc{
+  position: relative;
+}
 
 @media screen and (max-width: 768px) {
   .click {

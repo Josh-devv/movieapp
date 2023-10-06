@@ -8,8 +8,24 @@
 }
 .spins {
 }
-.spin {
+.spins {
   color: white;
+}
+.spin{
+  height: 100vh;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+
+}
+.spin span{
+  padding: 0;
+  display: inline;
+  justify-content: center;
 }
 .info{
   display: flex;

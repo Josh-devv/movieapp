@@ -1,15 +1,9 @@
-import React, { useEffect, useState, useRef, useLayoutEffect } from "react";
-import { useLocation, useParams } from "react-router-dom";
-import { BiPlayCircle } from "react-icons/bi";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useWatchlist } from "../../components/watchlist/WatchList";
 import { IoMdStar } from "react-icons/io";
-import { HiOutlinePlus } from "react-icons/hi";
 import { FaSpinner } from "react-icons/fa";
-import { AiOutlineHome } from "react-icons/ai";
-import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
-
+import BeatLoader from 'react-spinners/BeatLoader'
 import "./movieselect.css";
 
 export default function MovieSelect() {
@@ -32,11 +26,19 @@ export default function MovieSelect() {
       setLoading(false);
     };
 
+    if (loading) {
+      setTimeout(() => {
+        alert('yntbgfvcds')
+      }, 5000);
+    }
     fetchMovies();
   }, [pages]);
 
   //console.log(popularMovies);
-
+const override = {
+  margin: '0 auto',
+  borderColor: 'red'
+}
   return (
 
     <>
@@ -45,8 +47,8 @@ export default function MovieSelect() {
     <section className="all-mov">
       <div className="head-app3">
         {loading ? (
-          <div className=" spins w-100">
-            <FaSpinner spin className="spin" size={25} />
+          <div className=" spin ">
+            <BeatLoader color="white" cssOverride={override} loading={loading} size={50} />
           </div>
         ) : (
           <div className="app3">

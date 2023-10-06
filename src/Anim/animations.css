@@ -51,3 +51,86 @@
 .types h6:last-child{
     animation-delay: .3s;
 }
+
+
+.popup{
+    width: 20px;
+    background-color: rgba(0, 0, 0);
+    position: absolute;
+    border: 1px solid white;
+    color: white;
+    border-radius: 50px;
+    display: flex;
+    color: transparent;
+    top: 50%;
+    left: 50%;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+    animation: up .5s ease-in forwards, exp 1s ease-out forwards 1s, down .3s ease-in forwards 2s;
+}
+@keyframes up {
+    0%{
+        top: 100%;
+      
+    }
+    100%{
+        
+        top: 50%;
+    }
+}
+@keyframes exp {
+    0%{
+        width: 0%;
+        
+    }
+    30%{
+        width: 30%;
+    }
+    100%{
+        width: 30%;
+        
+        color: white;
+    }
+
+}
+@keyframes down {
+    0%{
+        top: 80%;
+        color: transparent;
+    }
+   
+    100%{
+        color: transparent;
+        top: 100%;
+        opacity: 0;
+    }
+
+}
+
+@media screen and (max-width:768px){
+    .popup{
+        background-color: white;
+        color: black;
+        font-size: 1px;
+        font-weight: bold;
+        width: 10px;
+    }
+    @keyframes exp {
+        0%{
+            width: 0%;
+            
+        }
+        30%{
+            width: 70%;
+            font-size: 15px;
+        }
+        100%{
+            width: 70%;
+            font-size: 15px;
+            color: white;
+        }
+    
+    }
+}

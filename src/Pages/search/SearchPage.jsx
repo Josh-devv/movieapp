@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
 import { FaSpinner } from "react-icons/fa";
+import ClockLoader from 'react-spinners/CircleLoader'
 import Navbar from "../../components/navbar/Navbar";
 
 import './search.css'
@@ -39,6 +40,10 @@ export default function SearchPage() {
          .catch(error => console.error('Error fetching movie details:', error));
     }, []);
 
+    const override = {
+        margin: '0 auto',
+        borderColor: 'red'
+      }
   return (
     <>
      <Navbar />
@@ -51,7 +56,7 @@ export default function SearchPage() {
             {
                 loading ? (
                     <div className=" spins2 w-100">
-                        <FaSpinner spin className='spin' size={25}/>
+                         <ClockLoader  color="white" cssOverride={override} loading={loading} size={30}/>
                     </div>
                     ) : (
                     
@@ -81,7 +86,7 @@ export default function SearchPage() {
                     {
                         loading ? (
                             <div className=" spins2 w-100">
-                                <FaSpinner spin className='spin' size={25}/>
+                                <ClockLoader  color="white" cssOverride={override} loading={loading} size={30}/>
                             </div>
                                 ) : (
                                 weekly.map((week)=>(

@@ -35,6 +35,7 @@ export default function Navbar(){
       let inp = document.querySelector('.uu')
       window.location.href = `/search/${inp.value}`
     }
+
     const handleSubmit1 =(e)=>{
       e.preventDefault()
       let inp = document.querySelector('.u2')
@@ -110,7 +111,7 @@ export default function Navbar(){
                                     <GoSearch size={20} color="blue"/>
                                   </Link>
                                 </div>
-                                <form onSubmit={handleSubmit1}>
+                                <form onSubmit={handleSubmit}>
                                   <input className="u2" type="text" value={searchQuery}                    
                                     onChange={(e) => {
                                     setSearchQuery(e.target.value)}}

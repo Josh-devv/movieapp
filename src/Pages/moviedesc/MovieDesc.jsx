@@ -8,10 +8,15 @@ import { HiOutlinePlus } from "react-icons/hi";
 import { AiOutlineHome } from "react-icons/ai";
 import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
-
+import Popup from "../../components/popup/Popup";
+import '../../Anim/animations.css'
 import "./movie.css";
 
+  
+
 export default function MovieDesc() {
+
+  const [add, setAdded] =useState("Add to your WatchList")
   const loc = useLocation(); //to bring the location of the page
   const { id } = useParams(); //taking the id from the routes using useParams which passed thru the routes
   const [mdetails, setMdetails] = useState([]);
@@ -20,11 +25,24 @@ export default function MovieDesc() {
   const imgRef = useRef(null);
   const { watchlist, addToWatchlist } = useWatchlist();
   const [clicked, setClicked] = useState(false);
+  const [showPopUp, setShowPopUp] = useState(false)
+  const [disable, setDisabled] = useState(false)
 
+
+  
   const handleAddToWatchlist = () => {
     addToWatchlist(mdetails);
     setClicked(true);
+    setAdded("Movie added to watchList")
+    setShowPopUp(true)
+    setDisabled(true)
   };
+
+  const disStyle ={
+    backgroundColor: 'gray',
+    cursor: 'not-allowed',
+    color: 'white'
+  }
 
   //for all movies for the unique id to be found
   useEffect(() => {
@@ -134,11 +152,23 @@ export default function MovieDesc() {
 
             <div className="btns d-flex">
               <button className="desc-button"> Watch Now</button>
-              <button className="desc-button1" onClick={handleAddToWatchlist}>
+              <button className="desc-button1" onClick={() => handleAddToWatchlist()} 
+                disabled={disable}
+                style={disable ? disStyle : {}}
+                >
+                  
                 <HiOutlinePlus />
-                <span>Add to WatchList</span>
+                <span>{add}</span>
               </button>
             </div>
+            {showPopUp ? 
+            <div className="popup">
+              <Popup />
+            </div>
+          :
+           ''
+          }
+            
           </div>
         </div>
         <div className="gen" style={{ display: clicked ? "block" : "none" }}>
@@ -148,7 +178,7 @@ export default function MovieDesc() {
               <div>
                 <div
                   className="carou-add color-white"
-                  onClick={handleAddToWatchlist}
+                  onClick={() => handleAddMovie(week)}
                 ></div>
                 <div className="">
                   <span className="click">Click this to add</span>

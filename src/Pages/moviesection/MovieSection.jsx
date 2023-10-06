@@ -8,6 +8,7 @@ import Rated from '../../components/rated/Rated'
 import UpComing from '../../components/upcoming/UpComing'
 import { Link } from 'react-router-dom'; 
 import { FaSpinner } from 'react-icons/fa';
+import ClockLoader from 'react-spinners/CircleLoader'
 import Home from '../home/Home';
 
 import './movie.css'
@@ -49,7 +50,10 @@ export default function MovieSection(){
      
     }, []);
 
-  
+    const override = {
+        margin: '0 auto',
+        borderColor: 'red'
+      }
    return ( 
     <>
     <Home />
@@ -67,7 +71,7 @@ export default function MovieSection(){
                     {
                         loading ? (
                             <div className=" spins w-100">
-                            <FaSpinner spin className='spin' size={25}/>
+                            <ClockLoader  color="white" cssOverride={override} loading={loading} size={30}/>
                            
                             </div>
                         ) : (
@@ -86,7 +90,7 @@ export default function MovieSection(){
                     {
                         loading ? (
                             <div className=" spins w-100">
-                            <FaSpinner spin className='spin' size={25}/>
+                            <ClockLoader  color="white" cssOverride={override} loading={loading} size={30}/>
                            
                             </div>
                         ) : (
@@ -104,7 +108,7 @@ export default function MovieSection(){
                     {
                         loading ? (
                             <div className=" spins w-100">
-                            <FaSpinner spin className='spin' size={25}/>
+                            <ClockLoader  color="white" cssOverride={override} loading={loading} size={30}/>
                            
                             </div>
                         ) : (

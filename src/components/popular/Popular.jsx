@@ -11,6 +11,12 @@ export default function Popular({ popularMovies }) {
 
   const [loading, setLoading] = useState();
 
+  if (!loading) {
+    setTimeout(() => {
+      alert('u r off')
+    }, 1000);
+  }
+
    return(
     <>
     
