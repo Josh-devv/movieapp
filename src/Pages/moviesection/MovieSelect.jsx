@@ -7,7 +7,7 @@ import BeatLoader from 'react-spinners/BeatLoader'
 import "./movieselect.css";
 
 export default function MovieSelect() {
-  const [popularMovies, setPopularMovies] = useState([]);
+  const [all, setAll] = useState([]);
   const [loading, setLoading] = useState(true);
   const apiKey = "543c959c84a2edaf19d168f7a042f6eb";
   const pages = 5;
@@ -22,7 +22,7 @@ export default function MovieSelect() {
         const data = await response.json();
         movies.push(...data.results);
       }
-      setPopularMovies(movies);
+      setAll(movies);
       setLoading(false);
     };
 
@@ -52,7 +52,7 @@ const override = {
           </div>
         ) : (
           <div className="app3">
-            {popularMovies.map((mov) => (
+            {all.map((mov) => (
               <Link
                 to={{ pathname: `/movie/${mov.id}`, state: { movie: mov } }}
                 key={mov.id}
