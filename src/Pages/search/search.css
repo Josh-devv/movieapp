@@ -20,7 +20,7 @@
     height: 100%;
     color: white;
     padding-top: 100px;
-    
+    z-index: -1;
   }
   
 .spins2{

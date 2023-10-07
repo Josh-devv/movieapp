@@ -11,12 +11,11 @@ export default function Watchlist(){
     
     return(
         <>
-        <Navbar/>
-
-         <div className="gen5 pt-5">
-          <h5 className="genre" id="ggg">My WatchList</h5>
-          <div className="head-app5">
-            <div className="app5">
+        <Navbar />
+         <div className="gen6 pt-5">
+          <h5 className=" genre"id="gg2">My WatchList: {watchlist.length}</h5>
+          <div className="head-app6">
+            <div className="app6">
               
 
               {
@@ -35,7 +34,7 @@ export default function Watchlist(){
                       }}
                       key={week.id}
                     >
-                      <div className="carou-w5">
+                      <div className="carou-w6">
                         <img
                           src={`https://image.tmdb.org/t/p/w500${week.poster_path}`}
                           alt=""
@@ -43,8 +42,8 @@ export default function Watchlist(){
                       </div>
     
                       <div className="head-info0">
-                        <span className="info0">{week.title}</span>
-                        <div className="container-fluid ratings-w5">
+                        <span className="info00">{week.title}</span>
+                        <div className="container-fluid ratings-w7">
                           <small className="">
                             <IoMdStar size={20} color="yellow" />
                             {week.vote_average}

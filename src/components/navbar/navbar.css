@@ -163,6 +163,7 @@
     position: fixed;
     flex-direction: column;
     color: white;
+    padding: 25px;
     height: 100vh;
     background-color: transparent;
     width: 100%;
@@ -211,7 +212,7 @@
   .types2{
     position: relative;
     align-items: center;
-    height: 40vh;
+    height: 60%;
     
     display: grid;
     row-gap: 0px;

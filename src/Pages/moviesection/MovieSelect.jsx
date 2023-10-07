@@ -37,7 +37,7 @@ const override = {
   return (
 
     <>
-      <Navbar />
+    <Navbar />
     
     <section className="all-mov">
       <div className="head-app3">

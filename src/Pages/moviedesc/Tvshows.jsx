@@ -34,7 +34,7 @@ console.log(setTvs);
     fetchMovies();
   }, [pages]);
 
-  //console.log(popularMovies);
+  console.log(tvs);
 const override = {
   margin: '0 auto',
   borderColor: 'red'
@@ -42,8 +42,7 @@ const override = {
   return (
 
     <>
-      <Navbar />
-    
+    <Navbar />
     <section className="all-mov">
       <div className="head-app3">
         {loading ? (
@@ -52,7 +51,9 @@ const override = {
           </div>
         ) : (
           <div className="app3">
-            {tvs.map((mov) => (
+            {
+            
+            tvs.map((mov) => (
               <Link
                 to={{ pathname: `/movie/${mov.id}`, state: { movie: mov } }}
                 key={mov.id}

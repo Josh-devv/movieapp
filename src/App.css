@@ -20,3 +20,8 @@
 .sli div{
   display: flex;
 }
+
+
+.react-multiple-carousel__arrow, .react-multiple-carousel__arrow::before{
+  z-index: none;
+}

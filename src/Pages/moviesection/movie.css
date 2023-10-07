@@ -11,10 +11,16 @@
     background-color: black;
     height: 100%;
     color: white;
+    z-index: -1;
     
   }
   .head-app2 Link:hover{
     text-decoration: none;
+  }
+  #gg2{
+    font-weight: lighter;
+    padding-left: 40px;
+    font-size: 30px;
   }
   .swiper {
     width: 100%;
@@ -91,4 +97,5 @@
 .carousel{
   height: 100%;
   width: 100%;
+  z-index: -1;
 }

@@ -45,7 +45,6 @@ export default function Navbar(){
 
     return(
         <body className="body-nav">
-          
             <div className="" id="sticky">
                 <h2 className="nav-head">Josh Flix</h2>
                 <div className="types">

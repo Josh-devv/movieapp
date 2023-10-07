@@ -55,7 +55,7 @@ export default function SearchPage() {
   };
   return (
     <>
-      <Navbar />
+    <Navbar />
       <div className="body">
         <h3 className="label">Movies Labeled "{title}"...</h3>
         <div className="container-fluid head-app2">

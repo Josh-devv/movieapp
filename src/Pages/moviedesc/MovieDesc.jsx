@@ -20,7 +20,7 @@ import "./movie.css";
 
 export default function MovieDesc() {
 
-  const [add, setAdded] =useState("Add to your WatchList")
+  const [add, setAdded] =useState("Add to WatchList")
   const loc = useLocation(); //to bring the location of the page
   const { id } = useParams(); //taking the id from the routes using useParams which passed thru the routes
   const [mdetails, setMdetails] = useState([]);
@@ -31,20 +31,22 @@ export default function MovieDesc() {
   const { watchlist, addToWatchlist } = useWatchlist();
   const [clicked, setClicked] = useState(false);
   const [showPopUp, setShowPopUp] = useState(false);
-  const [disable, setDisabled] = useState(false);
+  
 
   
  
-
   
 
   const handleAddToWatchlist = () => {
     addToWatchlist(mdetails);
     setClicked(true);
-    setAdded("Movie added to watchList")
-    setShowPopUp(true)
-    setDisabled(false)
     
+    setShowPopUp(true)
+    
+setTimeout(() => {
+  setShowPopUp(false)
+}, 1500);
+  
   }
 
  
@@ -115,7 +117,6 @@ export default function MovieDesc() {
 
   return (
     <>
-      <Navbar />
       <section className=" desc-body">
         <div className="head-desc">
           <div className="desc-img">
@@ -174,8 +175,7 @@ export default function MovieDesc() {
               <button className="desc-button"> Watch Now</button>
               
               <button className="desc-button1" onClick={() => handleAddToWatchlist()} 
-                disabled={disable}
-                style={disable ? disStyle : {}}
+                
                 >
                   
                 <HiOutlinePlus />

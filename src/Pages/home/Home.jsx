@@ -9,8 +9,8 @@ import './home.css'
 export default function Home(){
     return(
         <>
+        <Navbar />
             <section className="home-banner">
-                 <Navbar />
                <div className=" home-page">
                     <div className="pfpf">
                         <h1 className="">Discover free Movies</h1>
