@@ -23,6 +23,11 @@
   font-family: var(--font-roboto);
   width: 100%;
 }
+.gen5{
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
 .head-desc {
   display: flex;
   justify-content: center;
@@ -143,6 +148,9 @@ p {
   align-items: center;
   padding: 0px 20px;
 }
+#ggg{
+  padding-left: 20px;
+}
 .btns button{
   height: 40px;
   display: flex;
@@ -185,13 +193,63 @@ p {
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
   box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
 }
+.carou-w5 {
+  width: 180px;
+  height: 250px;
+  margin: 1rem;
+  overflow: hidden;
+  position: relative;
+  border-radius: 12px;
+  background-color: rgba(253, 253, 253, 0.1);
+  border: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
+  box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+}
 .head-info{
   display: flex;
   flex-direction: column;
 }
+.ratings-w5{
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  width: 80%;
+}
+.ratings-w6{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
 .info{
   padding: 0;
   width: 150px;
+  
+  white-space: nowrap;
+  
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.info0{
+  padding-left: 0px;
+  width: 180px;
+  margin: 0;
+  
+  white-space: nowrap;
+  
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.info01{
+  padding-left: 20px;
+  width: 180px;
+  margin: 0;
   
   white-space: nowrap;
   
@@ -235,7 +293,13 @@ p {
 .descc{
   position: relative;
 }
-
+.app5{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+}
 @media screen and (max-width: 768px) {
   .click {
     font-size: 12px;

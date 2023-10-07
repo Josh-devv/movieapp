@@ -7,6 +7,7 @@ import { IoMdStar } from "react-icons/io";
 import ClockLoader from "react-spinners/CircleLoader";
 import { HiOutlinePlus } from "react-icons/hi";
 import { AiOutlineHome } from "react-icons/ai";
+import Watchlist from "./Watchlist";
 import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
 import Popup from "../../components/popup/Popup";
@@ -16,6 +17,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import '../../Anim/animations.css'
 import "./movie.css";
+
 
   
 
@@ -32,18 +34,20 @@ export default function MovieDesc() {
   const { watchlist, addToWatchlist } = useWatchlist();
   const [clicked, setClicked] = useState(false);
   const [showPopUp, setShowPopUp] = useState(false)
-  const [disable, setDisabled] = useState(false)
-
-
+  const [disable, setDisabled] = useState(false);
   
+
   const handleAddToWatchlist = () => {
     addToWatchlist(mdetails);
     setClicked(true);
     setAdded("Movie added to watchList")
     setShowPopUp(true)
-    setDisabled(true)
-  };
+    setDisabled(false)
 
+    
+
+  }
+ 
   const disStyle ={
     backgroundColor: 'gray',
     cursor: 'not-allowed',
@@ -184,56 +188,7 @@ export default function MovieDesc() {
             
           </div>
         </div>
-        <div className="gen" style={{ display: clicked ? "block" : "none" }}>
-          <h5 className="genre">My WatchList</h5>
-          <div className="head-app2">
-            <div className="app2">
-              <div>
-                <div
-                  className="carou-add color-white"
-                  onClick={() => handleAddMovie(week)}
-                ></div>
-                <div className="">
-                  <span className="click">Click this to add</span>
-                </div>
-              </div>
-
-              {watchlist.map((week) => (
-                <Link
-                  to={{
-                    pathname: `/movie/${week.id}`,
-                    state: { movie: week },
-                  }}
-                  key={week.id}
-                >
-                  <div className="carou-add">
-                    <img
-                      src={`https://image.tmdb.org/t/p/w500${week.poster_path}`}
-                      alt=""
-                    />
-                  </div>
-
-                  <div className="head-info">
-                    <span className="info in pl-3">{week.title}</span>
-                    <div className="container-fluid ratings-m">
-                      <small className="d-flex justify-content-center align-items-center">
-                        <IoMdStar size={20} color="yellow" />
-                        {week.vote_average}
-                      </small>
-                      {week.release_date && week.release_date.split("-")[0] ? (
-                        <small>{week.release_date.split("-")[0]}</small>
-                      ) : (
-                        <small className="d-none">
-                          Release date not available
-                        </small>
-                      )}
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
+       
 
         <div>
           <h5 className="container-fluid genre pt-5">Weekly Rated Movies</h5>
@@ -333,7 +288,7 @@ export default function MovieDesc() {
                     {mov.vote_average}
                   </small>
                   <small className=" year">
-                    {mov.release_date.split("-")[0]}
+                    
                   </small>
                 </div>
               </div>

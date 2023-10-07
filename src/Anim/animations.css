@@ -73,12 +73,12 @@
 }
 @keyframes up {
     0%{
-        top: 10%; 
+        top: 100%; 
         display: flex;
         opacity: ;
     }
     100%{
-        top: 20%;
+        top: 80%;
         opacity: ;
     }
 }

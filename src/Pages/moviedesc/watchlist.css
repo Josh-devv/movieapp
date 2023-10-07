@@ -1,0 +1,19 @@
+.app5{
+    display: flex;
+}
+.carou-w5{
+    width: 160px;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px;
+    border: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
+    box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+    flex: 0 0 calc(33.333% - 20px);
+  }
+  .carou-w5 img{
+    background-size: cover;
+     width: 100%;
+      height: 100%;
+  }
