@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
-import Watchlist from '../../Pages/moviedesc/Watchlist';
+
 
 const WatchlistContext = createContext();
 
@@ -10,11 +10,7 @@ export function WatchlistProvider({ children }) {
 
       if (!watchlist.some(moviee => moviee.id === movie.id)){
         setWatchlist(prevWatchlist => [...prevWatchlist, movie]);
-      }
-
-        
- 
-   
+      }//this checks if the movie id is already present in the list beforew adding it
     };
   
   return (

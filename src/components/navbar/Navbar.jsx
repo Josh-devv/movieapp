@@ -7,131 +7,131 @@ import '../../Anim/animations.css'
 import './navbar.css'
 import 'bootstrap/dist/css/bootstrap.css'
 
-export default function Navbar(){
+export default function Navbar() {
 
-    const [searchQuery, setSearchQuery] = useState('')
-    const [menu, setMenu] = useState(false)
+  const [searchQuery, setSearchQuery] = useState('')
+  const [menu, setMenu] = useState(false)
 
-    //for the blur background for navbar
-    window.onscroll = () => {
-            let blur = document.querySelector('.blur')
-        if (window.scrollY >= 50) {
-            blur.classList.add('backdrop')
-        } else{
-            blur.classList.remove('backdrop')
-        }
+  //for the blur background for navbar
+  window.onscroll = () => {
+    let blur = document.querySelector('.blur')
+    if (window.scrollY >= 50) {
+      blur.classList.add('backdrop')
+    } else {
+      blur.classList.remove('backdrop')
     }
+  }
 
-    const handleAnim = () => {
-      const el = document.querySelector('.types2')
-      el.classList.remove('types')
-      el.classList.add('types')
-    }
+  const handleAnim = () => {
+    const el = document.querySelector('.types2')
+    el.classList.remove('types')
+    el.classList.add('types')
+  }
 
-    const handleSubmit =(e)=>{
-      e.preventDefault()
-      let inp = document.querySelector('.uu')
-      window.location.href = `/search/${inp.value}`
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    let inp = document.querySelector('.uu')
+    window.location.href = `/search/${inp.value}`
+  }
 
-    const handleSubmit1 =(e)=>{
-      e.preventDefault()
-      let inp = document.querySelector('.u2')
-      window.location.href = `/search/${inp.value}`
-    }
-
-    
+  const handleSubmit1 = (e) => {
+    e.preventDefault()
+    let inp = document.querySelector('.u2')
+    window.location.href = `/search/${inp.value}`
+  }
 
 
-    return(
-        <body className="body-nav">
-            <div className="" id="sticky">
-                <h2 className="nav-head">Josh Flix</h2>
-                <div className="types">
-                    <h6 className="pl-2 pr-4">
-                      <Link to={`/`}>Home</Link>
-                    </h6>
-                    
-                    <h6 className="pl-2 pr-4">
-                    <Link to={{pathname: `/movies`}}>Movies</Link></h6>
-                    <h6 className="pl-2 pr-4">Genre</h6>
-                    <Link to={{pathname: `/tvshows`}}><h6 className="pl-2 pr-4">Tv Shows</h6></Link>
-                    <Link to={{pathname: `/watchlist`}}><h6 className="pl-2 pr-4">Watch List</h6></Link>
-                    
-                </div>
 
-                <div className="search mr-5">
-                  <div className='pq'>
-                    <Link to={`/search/${searchQuery}`} className='pl-3 pr-2'>
-                      <GoSearch size={20} color="blue"/>
-                    </Link>
-                  </div>
-                  <form onSubmit={handleSubmit}>
-                    <input className="uu" type="text" value={searchQuery}                    
-                      onChange={(e) => {
-                      setSearchQuery(e.target.value)
-                      
-                    }}
-                    placeholder="Search for something"
-                    />
-                  </form>
-                  
-                </div>
 
-                <div className="menu">
-                    <AiOutlineBars  size={28} onClick={() => {
-                      setMenu(!menu)
-                      handleAnim()
-                    }}/>
-                </div>
+  return (
+    <body className="body-nav">
+      <div className="" id="sticky">
+        <h2 className="nav-head">Josh Flix</h2>
+        <div className="types">
+          <h6 className="pl-2 pr-4">
+            <Link to={`/`}>Home</Link>
+          </h6>
 
-                <div className="blur backdrop"></div>
+          <h6 className="pl-2 pr-4">
+            <Link to={{ pathname: `/movies` }}>Movies</Link></h6>
+          <h6 className="pl-2 pr-4">Genre</h6>
+          <Link to={{ pathname: `/tvshows` }}><h6 className="pl-2 pr-4">Tv Shows</h6></Link>
+          <Link to={{ pathname: `/watchlist` }}><h6 className="pl-2 pr-4">Watch List</h6></Link>
+
+        </div>
+
+        <div className="search mr-5">
+          <div className='pq'>
+            <Link to={`/search/${searchQuery}`} className='pl-3 pr-2'>
+              <GoSearch size={20} color="blue" />
+            </Link>
+          </div>
+          <form onSubmit={handleSubmit}>
+            <input className="uu" type="text" value={searchQuery}
+              onChange={(e) => {
+                setSearchQuery(e.target.value)
+
+              }}
+              placeholder="Search for something"
+            />
+          </form>
+
+        </div>
+
+        <div className="menu">
+          <AiOutlineBars size={28} onClick={() => {
+            setMenu(!menu)
+            handleAnim()
+          }} />
+        </div>
+
+        <div className="blur backdrop"></div>
+      </div>
+
+      {menu &&
+        <div className="menu-bar">
+          <div className="types2 types">
+            <h6 className="pl-2 pr-4">
+              <Link to={`/`}>Home</Link>
+            </h6>
+            <h6 className="pl-2 pr-4">
+              <Link to={`/movies`}>
+                Movies
+              </Link>
+            </h6>
+            <h6 className="pl-2 pr-4">Genre</h6>
+            <Link to={{ pathname: `/tvshows` }}><h6 className="pl-2 pr-4">Tv Shows</h6></Link>
+            <Link to={{ pathname: `/watchlist` }}><h6 className="pl-2 pr-4">Watch List</h6></Link>
+          </div>
+
+          <div className="search-div">
+            <div className="search2 d-flex align-items-center">
+              <div className='pq'>
+                <Link to={`/search/${searchQuery}`} className='pl-3 pr-2'>
+                  <GoSearch size={20} color="blue" />
+                </Link>
+              </div>
+              <form onSubmit={handleSubmit1}>
+                <input className="u2" type="text" value={searchQuery}
+                  onChange={(e) => {
+                    setSearchQuery(e.target.value)
+
+                  }}
+                  placeholder="Search for something"
+                />
+              </form>
+
             </div>
-            
-            {menu &&
-            <div className="menu-bar">
-                        <div className="types2 types">
-                          <h6 className="pl-2 pr-4">
-                            <Link to={`/`}>Home</Link>
-                          </h6>
-                          <h6 className="pl-2 pr-4">
-                            <Link to={`/movies`}>
-                              Movies
-                            </Link>
-                          </h6>
-                          <h6 className="pl-2 pr-4">Genre</h6>
-                    <Link to={{pathname: `/tvshows`}}><h6 className="pl-2 pr-4">Tv Shows</h6></Link>
-                    <Link to={{pathname: `/watchlist`}}><h6 className="pl-2 pr-4">Watch List</h6></Link>
-                        </div>  
-                                  
-                        <div className="search-div">
-                            <div className="search2 d-flex align-items-center">
-                                <div className='pq'>
-                                  <Link to={`/search/${searchQuery}`} className='pl-3 pr-2'>
-                                    <GoSearch size={20} color="blue"/>
-                                  </Link>
-                                </div>
-                                <form onSubmit={handleSubmit1}>
-                                  <input className="u2" type="text" value={searchQuery}                    
-                                    onChange={(e) => {
-                                    setSearchQuery(e.target.value)
-                                  
-                                  }}
-                                    placeholder="Search for something"
-                                    />
-                                </form>
-                                
-                            </div>
-                        </div>                                      
-                    </div>}
+          </div>
+        </div>}
 
 
 
-        <script>
+      <script>
 
-        </script>
+      </script>
 
 
-        </body>
-    )
+    </body>
+  )
 }

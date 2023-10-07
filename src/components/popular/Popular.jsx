@@ -5,18 +5,10 @@ import { IoMdStar } from "react-icons/io";
 import { FaSpinner } from "react-icons/fa";
 
 import "./popular.css";
-//import {Swiper, SwiperSlide} from 'swiper/swiper-react.mjs'
 
 export default function Popular({ popularMovies }) {
   const [loading, setLoading] = useState();
 
-  /*
-  if (!loading) {
-    setTimeout(() => {
-      alert('check your network connection')
-    }, 5000);
-  }
-*/
   return (
     <>
       {popularMovies.map((mov) => (

@@ -4,8 +4,6 @@ import { WatchlistProvider } from "./components/watchlist/WatchList";
 import MovieSection from "./Pages/moviesection/MovieSection";
 import MovieDesc from "./Pages/moviedesc/MovieDesc";
 import SearchPage from "./Pages/search/SearchPage";
-import Navbar from "./components/navbar/Navbar";
-import Home from "./Pages/home/Home";
 import MovieSelect from "./Pages/moviesection/MovieSelect";
 import Watchlist from "./Pages/moviedesc/Watchlist";
 import Tvshows from "./Pages/moviedesc/Tvshows";

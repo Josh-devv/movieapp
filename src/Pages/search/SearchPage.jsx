@@ -1,30 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { IoMdStar } from "react-icons/io";
 import { useParams } from "react-router-dom";
-
-
 import { Link } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
 import ClockLoader from "react-spinners/CircleLoader";
 import Navbar from "../../components/navbar/Navbar";
-
-
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./search.css";
 
-const API_URL =
-  "https://api.themoviedb.org/3/search/movie?api_key=543c959c84a2edaf19d168f7a042f6eb";
+const API_URL = "https://api.themoviedb.org/3/search/movie?api_key=543c959c84a2edaf19d168f7a042f6eb";
 
 export default function SearchPage() {
 
   const { title } = useParams(); //getting the value of title using useParams from the route
   const [weekly, setWeekly] = useState([]);
-  
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(true); // for the spinner effect when it taking time to load
-
-  
   //getting the title from the the route which is the value(inputed value) in the search bar
   const fett = async (title) => {
     fetch(`${API_URL}&query=${title}`)

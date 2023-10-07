@@ -15,7 +15,7 @@ export default function MovieSelect() {
   useEffect(() => {
     const fetchMovies = async () => {
       const movies = [];
-      for (let page = 1; page <= pages; page++) {
+      for (let page = 1; page <= pages; page++) {//for fetching the pages one after the other
         const response = await fetch(
           `https://api.themoviedb.org/3/discover/tv?api_key=${apiKey}&page=${page}`
         );
@@ -25,71 +25,66 @@ export default function MovieSelect() {
       setTvs(movies);
       setLoading(false);
     };
-console.log(setTvs);
-    if (loading) {
-      setTimeout(() => {
-        alert('')
-      }, 5000);
-    }
+    
     fetchMovies();
   }, [pages]);
 
-  console.log(tvs);
-const override = {
-  margin: '0 auto',
-  borderColor: 'red'
-}
+  
+  const override = {
+    margin: '0 auto',
+    borderColor: 'red'
+  }
   return (
 
     <>
-    <Navbar />
-    <section className="all-mov">
-      <div className="head-app3">
-        {loading ? (
-          <div className=" spin ">
-            <BeatLoader color="white" cssOverride={override} loading={loading} size={50} />
-          </div>
-        ) : (
-          <div className="app3">
-            {
-            
-            tvs.map((mov) => (
-              <Link
-                to={{ pathname: `/movie/${mov.id}`, state: { movie: mov } }}
-                key={mov.id}
-              >
-                {loading ? (
-                  <FaSpinner />
-                ) : (
-                  <>
-                    <div className="carou-we color-white" key={mov.id}>
-                      <img
-                        src={`https://image.tmdb.org/t/p/w500${mov.poster_path}`}
-                        alt=""
-                      />
-                      
-                    </div>
+      <Navbar />
+      <section className="all-mov">
+        <div className="head-app3">
+          {loading ? (
+            <div className=" spin ">
+              <BeatLoader color="white" cssOverride={override} loading={loading} size={50} />
+            </div>
+          ) : (
+            <div className="app3">
+              {
 
-                    <div className="head-info">
-                      <span className="info">{mov.name}</span>
-                      <div className="ratings ">
-                        <small className="">
-                          <IoMdStar size={20} color="yellow" />
-                          {mov.vote_average}
-                        </small>
-                        <small className=" year">
-                          {mov.first_air_date.split("-")[0]}
-                        </small>
-                      </div>
-                    </div>
-                  </>
-                )}
-              </Link>
-            ))}
-          </div>
-        )}
-      </div>
-    </section>
+                tvs.map((mov) => (
+                  <Link
+                    to={{ pathname: `/movie/${mov.id}`, state: { movie: mov } }}
+                    key={mov.id}
+                  >
+                    {loading ? (
+                      <FaSpinner />
+                    ) : (
+                      <>
+                        <div className="carou-we color-white" key={mov.id}>
+                          <img
+                            src={`https://image.tmdb.org/t/p/w500${mov.poster_path}`}
+                            alt=""
+                          />
+
+                        </div>
+
+                        <div className="head-info">
+                          <span className="info">{mov.name}</span>
+                          <div className="ratings ">
+                            <small className="">
+                              <IoMdStar size={20} color="yellow" />
+                              {mov.vote_average}
+                            </small>
+                            <small className=" year">
+                              {mov.first_air_date.split("-")[0]}
+                            </small>
+                          </div>
+                        </div>
+                      </>
+                    )}
+                  </Link>
+                ))}
+            </div>
+          )}
+        </div>
+      </section>
     </>
   );
 }

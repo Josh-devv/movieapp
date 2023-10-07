@@ -30,60 +30,60 @@ export default function MovieSelect() {
   }, [pages]);
 
   //console.log(popularMovies);
-const override = {
-  margin: '0 auto',
-  borderColor: 'red'
-}
+  const override = {
+    margin: '0 auto',
+    borderColor: 'red'
+  }
   return (
 
     <>
-    <Navbar />
-    
-    <section className="all-mov">
-      <div className="head-app3">
-        {loading ? (
-          <div className=" spin ">
-            <BeatLoader color="white" cssOverride={override} loading={loading} size={50} />
-          </div>
-        ) : (
-          <div className="app3">
-            {all.map((mov) => (
-              <Link
-                to={{ pathname: `/movie/${mov.id}`, state: { movie: mov } }}
-                key={mov.id}
-              >
-                {loading ? (
-                  <FaSpinner />
-                ) : (
-                  <>
-                    <div className="carou-we color-white" key={mov.id}>
-                      <img
-                        src={`https://image.tmdb.org/t/p/w500${mov.poster_path}`}
-                        alt=""
-                      />
-                      
-                    </div>
+      <Navbar />
 
-                    <div className="head-info">
-                      <span className="info">{mov.title}</span>
-                      <div className="ratings ">
-                        <small className="">
-                          <IoMdStar size={20} color="yellow" />
-                          {mov.vote_average}
-                        </small>
-                        <small className=" year">
-                          {mov.release_date.split("-")[0]}
-                        </small>
+      <section className="all-mov">
+        <div className="head-app3">
+          {loading ? (
+            <div className=" spin ">
+              <BeatLoader color="white" cssOverride={override} loading={loading} size={50} />
+            </div>
+          ) : (
+            <div className="app3">
+              {all.map((mov) => (
+                <Link
+                  to={{ pathname: `/movie/${mov.id}`, state: { movie: mov } }}
+                  key={mov.id}
+                >
+                  {loading ? (
+                    <FaSpinner />
+                  ) : (
+                    <>
+                      <div className="carou-we color-white" key={mov.id}>
+                        <img
+                          src={`https://image.tmdb.org/t/p/w500${mov.poster_path}`}
+                          alt=""
+                        />
+
                       </div>
-                    </div>
-                  </>
-                )}
-              </Link>
-            ))}
-          </div>
-        )}
-      </div>
-    </section>
+
+                      <div className="head-info">
+                        <span className="info">{mov.title}</span>
+                        <div className="ratings ">
+                          <small className="">
+                            <IoMdStar size={20} color="yellow" />
+                            {mov.vote_average}
+                          </small>
+                          <small className=" year">
+                            {mov.release_date.split("-")[0]}
+                          </small>
+                        </div>
+                      </div>
+                    </>
+                  )}
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
     </>
   );
 }
