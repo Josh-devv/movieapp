@@ -590,6 +590,9 @@ p {
   .ratings-m{
     width: 180px;
   }
+  .ratings-w7{
+    display: none;
+  }
 }
 
 @media screen and (max-width:600px) {
