@@ -6,12 +6,9 @@ import { useWatchlist } from "../../components/watchlist/WatchList";
 import Navbar from "../../components/navbar/Navbar";
 export default function Watchlist(){
     const { watchlist, addToWatchlist } = useWatchlist();
-    const [clicked, setClicked] = useState(false);
+    
 
-    const handleAddToWatchlist =()=>{
-        setClicked(true)
-    }
-
+    
     return(
         <>
         <Navbar/>
@@ -22,39 +19,48 @@ export default function Watchlist(){
             <div className="app5">
               
 
-              {watchlist.map((week) => (
-                <Link
-                  to={{
-                    pathname: `/movie/${week.id}`,
-                    state: { movie: week },
-                  }}
-                  key={week.id}
-                >
-                  <div className="carou-w5">
-                    <img
-                      src={`https://image.tmdb.org/t/p/w500${week.poster_path}`}
-                      alt=""
-                    />
-                  </div>
-
-                  <div className="head-info0">
-                    <span className="info0">{week.title}</span>
-                    <div className="container-fluid ratings-w5">
-                      <small className="">
-                        <IoMdStar size={20} color="yellow" />
-                        {week.vote_average}
-                      </small>
-                      {week.release_date && week.release_date.split("-")[0] ? (
-                        <small>{week.release_date.split("-")[0]}</small>
-                      ) : (
-                        <small className="d-none">
-                          Release date not available
-                        </small>
-                      )}
-                    </div>
-                  </div>
-                </Link>
-              ))}
+              {
+                watchlist.length === 0 ?
+              (
+              <div className="no-mov">
+                <h1>No Movies has been added...</h1>
+              </div>
+              
+             ) : (
+                watchlist.map((week) => (
+                    <Link
+                      to={{
+                        pathname: `/movie/${week.id}`,
+                        state: { movie: week },
+                      }}
+                      key={week.id}
+                    >
+                      <div className="carou-w5">
+                        <img
+                          src={`https://image.tmdb.org/t/p/w500${week.poster_path}`}
+                          alt=""
+                        />
+                      </div>
+    
+                      <div className="head-info0">
+                        <span className="info0">{week.title}</span>
+                        <div className="container-fluid ratings-w5">
+                          <small className="">
+                            <IoMdStar size={20} color="yellow" />
+                            {week.vote_average}
+                          </small>
+                          {week.release_date && week.release_date.split("-")[0] ? (
+                            <small>{week.release_date.split("-")[0]}</small>
+                          ) : (
+                            <small className="d-none">
+                              Release date not available
+                            </small>
+                          )}
+                        </div>
+                      </div>
+                    </Link>
+                  ))
+              )}
             </div>
           </div>
         </div>

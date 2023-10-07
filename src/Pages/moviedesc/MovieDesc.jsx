@@ -1,13 +1,10 @@
 import React, { useEffect, useState, useRef, useLayoutEffect } from "react";
 import { useLocation, useParams } from "react-router-dom";
-import { BiPlayCircle } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { useWatchlist } from "../../components/watchlist/WatchList";
 import { IoMdStar } from "react-icons/io";
 import ClockLoader from "react-spinners/CircleLoader";
 import { HiOutlinePlus } from "react-icons/hi";
-import { AiOutlineHome } from "react-icons/ai";
-import Watchlist from "./Watchlist";
 import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
 import Popup from "../../components/popup/Popup";
@@ -33,8 +30,12 @@ export default function MovieDesc() {
   const [loading, setLoading] = useState(true);
   const { watchlist, addToWatchlist } = useWatchlist();
   const [clicked, setClicked] = useState(false);
-  const [showPopUp, setShowPopUp] = useState(false)
+  const [showPopUp, setShowPopUp] = useState(false);
   const [disable, setDisabled] = useState(false);
+
+  
+ 
+
   
 
   const handleAddToWatchlist = () => {
@@ -43,10 +44,9 @@ export default function MovieDesc() {
     setAdded("Movie added to watchList")
     setShowPopUp(true)
     setDisabled(false)
-
     
-
   }
+
  
   const disStyle ={
     backgroundColor: 'gray',
@@ -65,8 +65,9 @@ export default function MovieDesc() {
       .then((data) => {
         setMdetails(data);
         setLoading(false)
+        
       })
-
+      
       .catch((error) => console.error("Error fetching movie details:", error));
   }, [id]);
   console.log(mdetails);
@@ -101,8 +102,9 @@ export default function MovieDesc() {
       .then((response) => response.json())
       .then((json) => setWeekly(json.results))
       .catch((error) => console.error("Error fetching movie details:", error));
-
-    window.scrollTo(0, 0); //for it to go back to the top of the page onClick of any Link
+   
+    window.scrollTo(0, 0);
+     //for it to go back to the top of the page onClick of any Link
   }, [loc]); //by passing in the useLocation hook
 
 
@@ -117,6 +119,7 @@ export default function MovieDesc() {
       <section className=" desc-body">
         <div className="head-desc">
           <div className="desc-img">
+            
             {mdetails.backdrop_path ? (
               <img
                 src={`https://image.tmdb.org/t/p/original${mdetails.backdrop_path}`}
@@ -169,6 +172,7 @@ export default function MovieDesc() {
 
             <div className="btns d-flex">
               <button className="desc-button"> Watch Now</button>
+              
               <button className="desc-button1" onClick={() => handleAddToWatchlist()} 
                 disabled={disable}
                 style={disable ? disStyle : {}}
@@ -277,7 +281,7 @@ export default function MovieDesc() {
               <div className="carou-we color-white">
                 <img
                   src={`https://image.tmdb.org/t/p/w500${mov.poster_path}`}
-                  alt=""
+                  alt=""  
                 />
               </div>
               <div className="head-info">

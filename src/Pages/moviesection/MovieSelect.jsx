@@ -26,11 +26,6 @@ export default function MovieSelect() {
       setLoading(false);
     };
 
-    if (loading) {
-      setTimeout(() => {
-        alert('yntbgfvcds')
-      }, 5000);
-    }
     fetchMovies();
   }, [pages]);
 

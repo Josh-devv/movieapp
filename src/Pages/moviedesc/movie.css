@@ -235,6 +235,12 @@ p {
   text-overflow: ellipsis;
   overflow: hidden;
 }
+.no-mov{
+  height: 100vh;
+  
+  color: white;
+  z-index: 1000000000000000;
+}
 
 .info0{
   padding-left: 0px;
