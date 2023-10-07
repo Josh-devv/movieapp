@@ -117,6 +117,7 @@ setTimeout(() => {
 
   return (
     <>
+    <Navbar />
       <section className=" desc-body">
         <div className="head-desc">
           <div className="desc-img">
