@@ -55,18 +55,31 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
   width: 100%;
-  margin: 20px 0;
   
+  margin: 20px 0;
 }
 .app3 a{
-  margin: 20px 0;
+  margin: 10px 0;
 }
 .head-info{
 width: 100%;
 justify-content: center;
 }
+#gg3{
+  padding: 25px 0px 0px 20px;
+  font-size: 20px;
+  color: blue;
+}
+.app3{
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+}
 
 @media screen and (max-width: 580px) {
+  #gg3{
+    padding: 25px 0px 0px 10px;
+  }
   .head-info{
     width: 55px;
   }

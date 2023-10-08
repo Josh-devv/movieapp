@@ -38,7 +38,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   width: 100%;
   z-index: 1;
   position: absolute;
@@ -50,6 +49,8 @@
   width: 100%;
   display: flex;
   align-items: center;
+  gap: 20px;
+  padding-top: 30px;
   justify-content: start;
 }
 .dark {
@@ -68,6 +69,7 @@
 .desc-info {
   z-index: 10000;
   width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -86,14 +88,18 @@
 }
 
 .desc-name {
+  padding-top: 20px;
   font-size: 40px;
 }
 .descc {
+  
   display: flex;
   height: 100vh;
   justify-content: center;
+  padding: 0 30px;
   flex-direction: column;
   z-index: 100;
+ 
 }
 
 .desc-info h1 {
@@ -109,32 +115,29 @@
 }
 
 .desc-button {
-  margin-top: 40px;
   background-color: white;
   border-radius: 5px;
   display: flex;
-  margin-left: 45px;
   display: flex;
+  font-weight: bold;
   padding: 10px 0;
   justify-content: center;
-  width: 30%;
+  padding: 20px 40px;
   color: color;
   font-size: 15px;
-  font-weight: 400;
+  font-weight: bold;
 }
 .desc-button1 {
-  margin-top: 40px;
   background-color: white;
   border-radius: 5px;
   display: flex;
-  margin-left: 45px;
   color: black;
+  font-weight: bold;
   display: flex;
   justify-content: center;
-  width: 20%;
   color: color;
   font-size: 15px;
-  font-weight: 400;
+  
   display: flex;
   justify-content: start;
   align-items: center;
@@ -206,6 +209,17 @@
   margin: 0 auto;
   justify-content: center;
 }
+.no-mov{
+  color: gray;
+  font-size: 20px;
+  text-align: center;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  position: absolute;
+  font-weight: lighter;
+  top: 50%;
+}
 .app6{
   width: 100%;
   margin-left: 20px;
@@ -221,16 +235,33 @@
   min-height: 100vh;
   background-color: black;
 }
+.head-wat{
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+.wat{
+  width: 100%;
+  padding: 10px;
+}
 @media screen and (max-width: 768px) {
   .click {
     font-size: 12px;
   }
   .desc-carou {
-    width: 280px;
+    width: 100%;
     padding: 0;
   }
   .descc{
     width: 100%;
+    
+    
+    padding: 10px;
+  }
+  .no-mov{
+    
+    
   }
   
   
@@ -325,21 +356,21 @@
   
   .overview {
     width: 100%;
-    font-size: 8px;
+    font-size: 18px;
   }
   .desc-info {
     width: 100%;
   }
   .descc {
     width: 100%;
-    height: 100%;
+    
     z-index: 100;
     position: relative;
   }
   .descc button {
     width: 40%;
     margin-left: 5px;
-    font-size: 10px;
+    font-size: 16px;
     margin-top: 15px;
   }
   .desc-img {
@@ -369,31 +400,27 @@
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
     box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
   }
-  .descc button {
-    width: 20%;
-  }
   .descc h1 {
     font-size: 30px;
   }
  
   .desc-carou img {
-    width: 100%;
+   width: 100%;
+   background-size: cover;
   }
   .descc {
     width: 100%;
-    margin-top: 100px;
+    
+    
+    
   }
   .overview {
     width: 95%;
   }
-  .ratings-m{
-    
-    display: none;
-    padding: 0;
-  }
   .overview{
     width: 100%;
-    font-size: 4px;
+    font-size: 14px;
+    padding-top: 20px;
   }
   .tagline i{
     font-size: 15px;
@@ -411,20 +438,27 @@
   .headd img{
     width: 100%;
   }
-  .app2 a{
-    overflow: hidden;
-  }
-  .head-info .in, .head-info div{
-    display: none;
-  }
   .desc-button1 span{
     font-size: 12px;
   }
-  .ratings-m{
-    width: 180px;
-  }
-  .ratings-w7{
-    display: none;
-  }
 }
 
+@media screen and (max-width: 400px) {
+  .btns .desc-button1{
+    width: 50%;
+  }
+}
+@media screen and (max-width:380px) {
+  .desc-carou img{
+    width: 120px;
+  }
+  .descc{
+    margin-top: 100px;
+  }
+  .descc h1{
+    font-size: 25px;
+  }
+  .overview{
+    font-size: 12px;
+  }
+}

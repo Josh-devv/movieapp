@@ -57,6 +57,7 @@
   height: 40px;
   width: 50px;
   padding: 0 20px;
+  font-weight: 600;
   position: fixed;
   color: black;
   color: transparent;
@@ -102,7 +103,7 @@
     background-color: white;
     color: black;
     font-size: 0px;
-    font-weight: bold;
+    font-weight: 600;
     height: 40px;
     width: 40px;
     animation: expand 0.5s ease-in forwards 0.5s, up 0.3s ease forwards;

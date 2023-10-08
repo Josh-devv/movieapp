@@ -4,6 +4,7 @@ import { IoMdStar } from "react-icons/io";
 import { FaSpinner } from "react-icons/fa";
 import Navbar from "../../components/navbar/Navbar";
 import BeatLoader from 'react-spinners/BeatLoader'
+import CaroItems from "../../components/carousel/CaroItems";
 import "./movieselect.css";
 
 export default function MovieSelect() {
@@ -47,39 +48,17 @@ export default function MovieSelect() {
             </div>
           ) : (
             <div className="app3">
-              {all.map((mov) => (
-                <Link
-                  to={{ pathname: `/movie/${mov.id}`, state: { movie: mov } }}
-                  key={mov.id}
-                >
-                  {loading ? (
-                    <FaSpinner />
-                  ) : (
-                    <>
-                      <div className="carou-we color-white" key={mov.id}>
-                        <img
-                          src={`https://image.tmdb.org/t/p/w500${mov.poster_path}`}
-                          alt=""
-                        />
-
-                      </div>
-
-                      <div className="head-info">
-                        <span className="info">{mov.title}</span>
-                        <div className="ratings ">
-                          <small className="">
-                            <IoMdStar size={20} color="yellow" />
-                            {mov.vote_average}
-                          </small>
-                          <small className=" year">
-                            {mov.release_date.split("-")[0]}
-                          </small>
-                        </div>
-                      </div>
-                    </>
-                  )}
-                </Link>
-              ))}
+              
+                {all.map((mov) => (
+                  <CaroItems
+                    title={mov.title}
+                    id={mov.id}
+                    poster_path={mov.poster_path}
+                    vote_average={mov.vote_average}
+                    release_date={mov.release_date}
+                  />
+                ))}
+              
             </div>
           )}
         </div>

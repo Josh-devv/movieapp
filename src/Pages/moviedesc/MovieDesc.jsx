@@ -139,7 +139,8 @@ export default function MovieDesc() {
       
       <>
       <Navbar />
-      <section className=" desc-body">
+      
+      <section className="desc-body">
         <div className="head-desc">
           <div className="desc-img">
             {mdetails.backdrop_path ? (
@@ -203,12 +204,13 @@ export default function MovieDesc() {
                 <span>{add}</span>
               </button>
             </div>
+            
             {showPopUp ? (
               <div className="popup">
                 <Popup />
               </div>
             ) : (
-              ""
+              null
             )}
           </div>
         </div>

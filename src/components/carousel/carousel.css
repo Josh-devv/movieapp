@@ -61,6 +61,6 @@
 }
 @media screen and (max-width: 350px) {
   .carous{
-    width: calc(100vw / 2);
+    width: calc(100vw / 3);
   }
 }
