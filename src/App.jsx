@@ -8,7 +8,6 @@ import MovieSelect from "./Pages/moviesection/MovieSelect";
 import Watchlist from "./Pages/moviedesc/Watchlist";
 import Genre from './Pages/moviedesc/Genre'
 
-
 import "./App.css";
 
 
@@ -16,8 +15,11 @@ import "./App.css";
 const App = () => {
   return (
     <>
+    
       <WatchlistProvider>
+        
         <Router>
+          
           <Routes>
             <Route exact path="/" Component={MovieSection} />
             <Route path="/movies" Component={MovieSelect} />

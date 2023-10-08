@@ -54,8 +54,7 @@ export default function Navbar() {
 
           <h6 className="pl-2 pr-4">
             <Link to={{ pathname: `/movies` }}>Movies</Link></h6>
-            <Link to={{ pathname: `/genre` }}><h6 className="pl-2 pr-4">Genre</h6></Link>
-          <Link to={{ pathname: `/tvshows` }}><h6 className="pl-2 pr-4">Tv Shows</h6></Link>
+            
           <Link to={{ pathname: `/watchlist` }}><h6 className="pl-2 pr-4">Watch List</h6></Link>
 
         </div>
