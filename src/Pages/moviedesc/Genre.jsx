@@ -1,59 +1,31 @@
-import React, { useRef }from "react";
-import { useEffect, useState, useLayoutEffect } from "react";
-import Footer from "../../components/footer/Footer";
-import ClockLoader from "react-spinners/CircleLoader";
-import Home from "../home/Home";
-import { IoMdStar } from "react-icons/io";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { IoMdStar } from "react-icons/io";
+import { FaSpinner } from "react-icons/fa";
+import Navbar from "../../components/navbar/Navbar";
+import BeatLoader from 'react-spinners/BeatLoader'
+
 import Carousel from "react-multi-carousel";
-import BeatLoader from 'react-spinners/ClipLoader'
 import "react-multi-carousel/lib/styles.css";
 
-import "./movie.css";
 
-export default function MovieSection() {
-  const [ratedMovies, setRatedMovies] = useState([]);
+export default function MovieSelect() {
+  const [rom, setRom] = useState([]);
+  const [gen, setGenre] = useState([]);
+  const [com, setCom] = useState([]);
+  const [drama, setDrama] = useState([]);
+  
   const [loading, setLoading] = useState(false);
-  const [popularMovies, setPopularMovies] = useState([]);
-  const [upComingMovies, setUpComingMovies] = useState([]);
-  const [tvShows, setTvShows] = useState([]);
-  const [genre, setGenre] = useState([]);
-
-
+  const apiKey = "543c959c84a2edaf19d168f7a042f6eb";
+  const pages = 5;
 
   useEffect(()=>{
     setLoading(true);
     setTimeout(()=>{
       setLoading(false)
-    }, 3000)
+    }, 1000)
   }, [])
 
-  //const [searchQuery, setSearchQuery] = useState('');//this state is the one that would be going thru the routes and taking along the value searched
-
-  //this is for upcoming movies
-  useEffect(() => {
-    fetch(
-      "https://api.themoviedb.org/3/movie/upcoming?api_key=543c959c84a2edaf19d168f7a042f6eb"
-    )
-      .then((response) => response.json())
-
-      .then((json) => {
-        setUpComingMovies(json.results);
-       
-      });
-  }, []);
-
-  //this is for popular movies
-  useEffect(() => {
-    fetch(
-      "https://api.themoviedb.org/3/movie/popular?api_key=543c959c84a2edaf19d168f7a042f6eb"
-    )
-      .then((response) => response.json())
-      .then((json) => setPopularMovies(json.results));
-  }, []);
-
-
-  //for genre of movies
   useEffect(() => {
     fetch(
       "https://api.themoviedb.org/3/genre/movie/list?api_key=543c959c84a2edaf19d168f7a042f6eb"
@@ -69,52 +41,95 @@ export default function MovieSection() {
             `https://api.themoviedb.org/3/discover/movie?api_key=543c959c84a2edaf19d168f7a042f6eb&with_genres=${gen.id}`
           )
             .then((response) => response.json())
+            .then((json) => setRom(json.results))
+            .catch((error) => console.error("Error fetching romance movies:", error));
+        }
+      })
+      .catch((error) => console.error("Error fetching genre list:", error));
+  }, []);
+
+  useEffect(() => {
+    fetch(
+      "https://api.themoviedb.org/3/genre/movie/list?api_key=543c959c84a2edaf19d168f7a042f6eb"
+    )
+      .then((response) => response.json())
+      .then((json) => {
+        // Find the genre ID for "Romance"
+        const gen= json.genres.find((genre) => genre.name === "Adventure");
+  
+        if (gen) {
+          // Now you can use the genre ID to fetch romance movies
+          fetch(
+            `https://api.themoviedb.org/3/discover/movie?api_key=543c959c84a2edaf19d168f7a042f6eb&with_genres=${gen.id}`
+          )
+            .then((response) => response.json())
             .then((json) => setGenre(json.results))
             .catch((error) => console.error("Error fetching romance movies:", error));
         }
       })
       .catch((error) => console.error("Error fetching genre list:", error));
   }, []);
-  
-  console.log();
-
-  //this is for top rated movies
   useEffect(() => {
     fetch(
-      "https://api.themoviedb.org/3/movie/top_rated?api_key=543c959c84a2edaf19d168f7a042f6eb"
+      "https://api.themoviedb.org/3/genre/movie/list?api_key=543c959c84a2edaf19d168f7a042f6eb"
     )
       .then((response) => response.json())
-      .then((json) => setRatedMovies(json.results));
+      .then((json) => {
+        // Find the genre ID for "Romance"
+        const gen= json.genres.find((genre) => genre.name === "Comedy");
+  
+        if (gen) {
+          // Now you can use the genre ID to fetch romance movies
+          fetch(
+            `https://api.themoviedb.org/3/discover/movie?api_key=543c959c84a2edaf19d168f7a042f6eb&with_genres=${gen.id}`
+          )
+            .then((response) => response.json())
+            .then((json) => setCom(json.results))
+            .catch((error) => console.error("Error fetching romance movies:", error));
+        }
+      })
+      .catch((error) => console.error("Error fetching genre list:", error));
+  }, []);
+  useEffect(() => {
+    fetch(
+      "https://api.themoviedb.org/3/genre/movie/list?api_key=543c959c84a2edaf19d168f7a042f6eb"
+    )
+      .then((response) => response.json())
+      .then((json) => {
+        // Find the genre ID for "Romance"
+        const gen= json.genres.find((genre) => genre.name === "Action");
+  
+        if (gen) {
+          // Now you can use the genre ID to fetch romance movies
+          fetch(
+            `https://api.themoviedb.org/3/discover/movie?api_key=543c959c84a2edaf19d168f7a042f6eb&with_genres=${gen.id}`
+          )
+            .then((response) => response.json())
+            .then((json) => setDrama(json.results))
+            .catch((error) => console.error("Error fetching romance movies:", error));
+        }
+      })
+      .catch((error) => console.error("Error fetching genre list:", error));
   }, []);
 
-
-
-
-  //loading style
+  
   const override = {
-    margin: "0 auto",
-    borderColor: "red",
-  };
-
+    margin: '0 auto',
+    borderColor: 'red'
+  }
   return (
+
     <>
-    {
-      loading ?  (
-        <div className=" spin ">
+      <Navbar />
+      <>
+          {loading ? (
+            <div className=" spin ">
               <BeatLoader color="white" cssOverride={override} loading={loading} size={50} />
-        </div>
-      ) : (
-        <>
-          <Home />
-
-      <body className="body py-2">
-
-        <div></div>
-        <h5 className="container-fluid genre pl-4 pt-4 pb-3">
-          Upcoming movies
-        </h5>
-
-          <Carousel
+            </div>
+          ) : (
+            <>
+            <h1 className="container-fluid pl-4 pt-4 pb-3">Romance</h1>
+            <Carousel
             additionalTransfrom={0}
             arrows
             autoPlay
@@ -184,7 +199,7 @@ export default function MovieSection() {
             slidesToSlide={1}
             swipeable
           >
-            {upComingMovies.map((mov) => (
+            {rom.map((mov) => (
               <Link to={{ pathname: `/movie/${mov.id}` }} key={mov.id}>
                 <div className="carou-we color-white">
                   <img
@@ -207,13 +222,10 @@ export default function MovieSection() {
               </Link>
             ))}
           </Carousel>
-        
 
 
-        <h5 className="container-fluid genre pl-4 pt-4 pb-3">Popular Movies</h5>
-
-       
-          <Carousel
+            <h1 className="container-fluid pl-4 pt-4 pb-3">Romance</h1>
+            <Carousel
             additionalTransfrom={0}
             arrows
             autoPlay
@@ -236,17 +248,17 @@ export default function MovieSection() {
               desktop: {
                 breakpoint: {
                   max: 3000,
-                  min: 1366,
+                  min: 1280,
                 },
                 items: 7,
                 partialVisibilityGutter: 40,
               },
               desk: {
                 breakpoint: {
-                  max: 1366,
+                  max: 1280,
                   min: 1024,
                 },
-                items: 7,
+                items: 6,
                 partialVisibilityGutter: 40,
               },
               mobile: {
@@ -283,7 +295,7 @@ export default function MovieSection() {
             slidesToSlide={1}
             swipeable
           >
-            {popularMovies.map((mov) => (
+            {drama.map((mov) => (
               <Link to={{ pathname: `/movie/${mov.id}` }} key={mov.id}>
                 <div className="carou-we color-white">
                   <img
@@ -306,15 +318,9 @@ export default function MovieSection() {
               </Link>
             ))}
           </Carousel>
-        
 
-
-        
-       
-        <h5 className="container-fluid genre pl-4 pt-4 pb-3">Latest Movies</h5>
-
-       
-          <Carousel
+            <h1>Action</h1>
+            <Carousel
             additionalTransfrom={0}
             arrows
             autoPlay
@@ -337,18 +343,18 @@ export default function MovieSection() {
               desktop: {
                 breakpoint: {
                   max: 3000,
-                  min: 1366,
+                  min: 1280,
                 },
                 items: 7,
                 partialVisibilityGutter: 40,
               },
               desk: {
                 breakpoint: {
-                  max: 1366,
-                  min: 1000,
+                  max: 1280,
+                  min: 1024,
                 },
-                items: 7,
-                partialVisibilityGutter: 30,
+                items: 6,
+                partialVisibilityGutter: 40,
               },
               mobile: {
                 breakpoint: {
@@ -384,7 +390,7 @@ export default function MovieSection() {
             slidesToSlide={1}
             swipeable
           >
-            {genre.map((mov) => (
+            {com.map((mov) => (
               <Link to={{ pathname: `/movie/${mov.id}` }} key={mov.id}>
                 <div className="carou-we color-white">
                   <img
@@ -407,10 +413,8 @@ export default function MovieSection() {
               </Link>
             ))}
           </Carousel>
-        <h5 className="container-fluid genre pl-4 pt-4 pb-3">Top Rated Movies</h5>
-
-       
-          <Carousel
+            <h1>Action</h1>
+            <Carousel
             additionalTransfrom={0}
             arrows
             autoPlay
@@ -433,18 +437,18 @@ export default function MovieSection() {
               desktop: {
                 breakpoint: {
                   max: 3000,
-                  min: 1366,
+                  min: 1280,
                 },
                 items: 7,
                 partialVisibilityGutter: 40,
               },
               desk: {
                 breakpoint: {
-                  max: 1366,
-                  min: 1000,
+                  max: 1280,
+                  min: 1024,
                 },
-                items: 7,
-                partialVisibilityGutter: 30,
+                items: 6,
+                partialVisibilityGutter: 40,
               },
               mobile: {
                 breakpoint: {
@@ -480,7 +484,7 @@ export default function MovieSection() {
             slidesToSlide={1}
             swipeable
           >
-            {ratedMovies.map((mov) => (
+            {gen.map((mov) => (
               <Link to={{ pathname: `/movie/${mov.id}` }} key={mov.id}>
                 <div className="carou-we color-white">
                   <img
@@ -503,17 +507,10 @@ export default function MovieSection() {
               </Link>
             ))}
           </Carousel>
-        
-
-        <Footer />
-
-        <script src="../../components/slider/slider"></script>
-      </body>
-      </>
-      )
-        
-    }
-    
+</>
+          )}
+        </>
+      
     </>
   );
 }

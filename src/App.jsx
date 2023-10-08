@@ -6,7 +6,7 @@ import MovieDesc from "./Pages/moviedesc/MovieDesc";
 import SearchPage from "./Pages/search/SearchPage";
 import MovieSelect from "./Pages/moviesection/MovieSelect";
 import Watchlist from "./Pages/moviedesc/Watchlist";
-import Tvshows from "./Pages/moviedesc/Tvshows";
+import Genre from './Pages/moviedesc/Genre'
 
 
 import "./App.css";
@@ -24,7 +24,8 @@ const App = () => {
             <Route path="/movie/:id" Component={MovieDesc} />
             <Route path="/search/:title" Component={SearchPage} />
             <Route path="/watchlist" Component={Watchlist} />
-            <Route path="/tvshows" Component={Tvshows}/>
+            
+            <Route path="/genre" Component={Genre}/>
             
           </Routes>
         </Router>

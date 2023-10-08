@@ -79,7 +79,7 @@ export default function MovieDesc() {
 
       .catch((error) => console.error("Error fetching movie details:", error));
   }, [id]);
-
+  
 
   //useEffect Code for lazy loading
   useEffect(() => {
