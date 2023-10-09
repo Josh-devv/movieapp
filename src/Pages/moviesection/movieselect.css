@@ -80,7 +80,7 @@ justify-content: center;
   padding: 25px 0px 0px 20px;
   font-size: 20px;
   color: white;
-
+}
 .app3{
   display: flex;
   flex-wrap: wrap;
@@ -120,7 +120,7 @@ justify-content: center;
     gap: 30px;
   }
   .app3 a{
-    width: 100px;
+    max-width: 100px;
   }
   .head-app3{
     justify-content: start;

@@ -29,6 +29,9 @@
   height: 50px;
   
 }
+.date{
+  color: blue;
+}
 .content .title{
   overflow: hidden;
   width: 100%;
@@ -57,7 +60,7 @@ span .rrr2{
     display: none;
   }
   .date{
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 @media screen and (max-width:768px) and (min-width: 500px){
