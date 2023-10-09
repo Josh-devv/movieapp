@@ -63,3 +63,8 @@
         justify-self: start;
     }
   }
+  .gen6 .app3{
+    justify-content: start;
+    margin: 0;
+    padding: 20px;
+  }

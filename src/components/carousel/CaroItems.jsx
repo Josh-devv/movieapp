@@ -30,7 +30,7 @@ function CaroItems(props) {
               <IoMdStar size={20} color="yellow" />
               {props.vote_average}
             </small>
-            <small className="date">{props.release_date.split("-")[0]}</small>
+            <small className="date" style={{color: 'blue'}}>{props.release_date.split("-")[0]}</small>
           </div>
         </div>
       </Link>

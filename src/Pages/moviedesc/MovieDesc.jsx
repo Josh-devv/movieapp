@@ -186,7 +186,7 @@ export default function MovieDesc() {
               ) : (
                 <small className="nope">Release date not available</small>
               )}
-              |<small className="mins ml-2">{mdetails.runtime}mins</small>
+              |<small className="mins ml-2">{mdetails.runtime}&nbsp;mins</small>
             </span>
 
             <span className="overview">{mdetails.overview}</span>
