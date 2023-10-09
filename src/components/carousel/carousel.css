@@ -2,6 +2,7 @@
     height: 100%;
     width: 100%;
     z-index: -1;
+    padding: 0 10px;
   }
 
 .carous{
@@ -37,6 +38,17 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
+span .rrr{
+  width: 80%;
+  height: 150px;
+  margin: 10px 0;
+}
+span .rrr1{
+  width: 60%;
+}
+span .rrr2{
+  width: 50%;
 }
 @media screen and (max-width:768px) {
   .details{

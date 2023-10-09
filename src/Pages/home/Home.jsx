@@ -13,11 +13,11 @@ export default function Home(){
         <Navbar />
             <section className="home-banner">
                <div className=" home-page">
-                    <div className="pfpf">
+                    <div className="home-head">
                         <h1 className="">Discover free Movies</h1>
                         <p className="">Thousands of Movies & TV shows available just for you on JoshFlix!</p>
                         <Link to={`/movies`}>
-                            <button>Explore</button>
+                            <button className="but">Explore</button>
                         </Link>
                         
                     </div>

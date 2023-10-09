@@ -17,7 +17,7 @@ export default function Watchlist() {
     setLoading(true)
         setTimeout(()=>{
           setLoading(false)
-        }, 1000)
+        }, 500)
   },[])
 
   const override = {

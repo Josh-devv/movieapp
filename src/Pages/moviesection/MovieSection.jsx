@@ -28,7 +28,7 @@ export default function MovieSection() {
     setLoading(true);
     setTimeout(()=>{
       setLoading(false)
-    }, 1500)
+    }, 200)
   }, [])
 
   //const [searchQuery, setSearchQuery] = useState('');//this state is the one that would be going thru the routes and taking along the value searched

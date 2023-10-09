@@ -5,6 +5,12 @@ import { FaSpinner } from "react-icons/fa";
 import Navbar from "../../components/navbar/Navbar";
 import BeatLoader from 'react-spinners/BeatLoader'
 
+import Caros from "../../components/carousel/Carousel";
+import CaroItems from "../../components/carousel/CaroItems";
+import "./genre.css"
+
+
+
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -14,17 +20,9 @@ export default function MovieSelect() {
   const [gen, setGenre] = useState([]);
   const [com, setCom] = useState([]);
   const [drama, setDrama] = useState([]);
-  
-  const [loading, setLoading] = useState(false);
   const apiKey = "543c959c84a2edaf19d168f7a042f6eb";
   const pages = 5;
 
-  useEffect(()=>{
-    setLoading(true);
-    setTimeout(()=>{
-      setLoading(false)
-    }, 1000)
-  }, [])
 
   useEffect(() => {
     fetch(
@@ -121,395 +119,61 @@ export default function MovieSelect() {
 
     <>
       <Navbar />
-      <>
-          {loading ? (
-            <div className=" spin ">
-              <BeatLoader color="white" cssOverride={override} loading={loading} size={50} />
-            </div>
-          ) : (
+      <div className="ge">
             <>
             <h1 className="container-fluid pl-4 pt-4 pb-3">Romance</h1>
-            <Carousel
-            additionalTransfrom={0}
-            arrows
-            autoPlay
-            autoPlaySpeed={2000}
-            centerMode={false}
-            className=""
-            containerClass="container-with-dots"
-            dotListClass=""
-            draggable
-            focusOnSelect={false}
-            infinite
-            itemClass="carousel"
-            keyBoardControl
-            minimumTouchDrag={80}
-            pauseOnHover
-            renderArrowsWhenDisabled={false}
-            renderButtonGroupOutside={false}
-            renderDotsOutside={false}
-            responsive={{
-              desktop: {
-                breakpoint: {
-                  max: 3000,
-                  min: 1280,
-                },
-                items: 7,
-                partialVisibilityGutter: 40,
-              },
-              desk: {
-                breakpoint: {
-                  max: 1280,
-                  min: 1024,
-                },
-                items: 6,
-                partialVisibilityGutter: 40,
-              },
-              mobile: {
-                breakpoint: {
-                  max: 1024,
-                  min: 768,
-                },
-                items: 5,
-                partialVisibilityGutter: 30,
-              },
-              tablet: {
-                breakpoint: {
-                  max: 900,
-                  min: 768,
-                },
-                items: 4,
-                partialVisibilityGutter: 30,
-              },
-              small: {
-                breakpoint: {
-                  max: 768,
-                  min: 0
-                },
-                items: 3,
-                partialVisibilityGutter: 30,
-              }
-            }}
-            rewind={false}
-            rewindWithAnimation={false}
-            rtl={false}
-            shouldResetAutoplay
-            showDots={false}
-            sliderClass=""
-            slidesToSlide={1}
-            swipeable
-          >
-            {rom.map((mov) => (
-              <Link to={{ pathname: `/movie/${mov.id}` }} key={mov.id}>
-                <div className="carou-we color-white">
-                  <img
-                    src={`https://image.tmdb.org/t/p/w500${mov.poster_path}`}
-                    alt=""
+            <Caros>
+                {rom.map((mov) => (
+                  <CaroItems
+                    title={mov.title}
+                    id={mov.id}
+                    poster_path={mov.poster_path}
+                    vote_average={mov.vote_average}
+                    release_date={mov.release_date}
                   />
-                </div>
-                <div className="head-info">
-                  <span className="info pl-3">{mov.title}</span>
-                  <div className="container-fluid ratings">
-                    <small className="d-flex justify-content-center">
-                      <IoMdStar size={20} color="yellow" />
-                      {mov.vote_average}
-                    </small>
-                    <small className=" year">
-                      {mov.release_date.split("-")[0]}
-                    </small>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </Carousel>
+                ))}
+              </Caros>
 
 
             <h1 className="container-fluid pl-4 pt-4 pb-3">Romance</h1>
-            <Carousel
-            additionalTransfrom={0}
-            arrows
-            autoPlay
-            autoPlaySpeed={2000}
-            centerMode={false}
-            className=""
-            containerClass="container-with-dots"
-            dotListClass=""
-            draggable
-            focusOnSelect={false}
-            infinite
-            itemClass="carousel"
-            keyBoardControl
-            minimumTouchDrag={80}
-            pauseOnHover
-            renderArrowsWhenDisabled={false}
-            renderButtonGroupOutside={false}
-            renderDotsOutside={false}
-            responsive={{
-              desktop: {
-                breakpoint: {
-                  max: 3000,
-                  min: 1280,
-                },
-                items: 7,
-                partialVisibilityGutter: 40,
-              },
-              desk: {
-                breakpoint: {
-                  max: 1280,
-                  min: 1024,
-                },
-                items: 6,
-                partialVisibilityGutter: 40,
-              },
-              mobile: {
-                breakpoint: {
-                  max: 1024,
-                  min: 768,
-                },
-                items: 5,
-                partialVisibilityGutter: 30,
-              },
-              tablet: {
-                breakpoint: {
-                  max: 900,
-                  min: 768,
-                },
-                items: 4,
-                partialVisibilityGutter: 30,
-              },
-              small: {
-                breakpoint: {
-                  max: 768,
-                  min: 0
-                },
-                items: 3,
-                partialVisibilityGutter: 30,
-              }
-            }}
-            rewind={false}
-            rewindWithAnimation={false}
-            rtl={false}
-            shouldResetAutoplay
-            showDots={false}
-            sliderClass=""
-            slidesToSlide={1}
-            swipeable
-          >
-            {drama.map((mov) => (
-              <Link to={{ pathname: `/movie/${mov.id}` }} key={mov.id}>
-                <div className="carou-we color-white">
-                  <img
-                    src={`https://image.tmdb.org/t/p/w500${mov.poster_path}`}
-                    alt=""
+            <Caros>
+                {drama.map((mov) => (
+                  <CaroItems
+                    title={mov.title}
+                    id={mov.id}
+                    poster_path={mov.poster_path}
+                    vote_average={mov.vote_average}
+                    release_date={mov.release_date}
                   />
-                </div>
-                <div className="head-info">
-                  <span className="info pl-3">{mov.title}</span>
-                  <div className="container-fluid ratings">
-                    <small className="d-flex justify-content-center">
-                      <IoMdStar size={20} color="yellow" />
-                      {mov.vote_average}
-                    </small>
-                    <small className=" year">
-                      {mov.release_date.split("-")[0]}
-                    </small>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </Carousel>
+                ))}
+              </Caros>
 
             <h1>Action</h1>
-            <Carousel
-            additionalTransfrom={0}
-            arrows
-            autoPlay
-            autoPlaySpeed={2000}
-            centerMode={false}
-            className=""
-            containerClass="container-with-dots"
-            dotListClass=""
-            draggable
-            focusOnSelect={false}
-            infinite
-            itemClass="carousel"
-            keyBoardControl
-            minimumTouchDrag={80}
-            pauseOnHover
-            renderArrowsWhenDisabled={false}
-            renderButtonGroupOutside={false}
-            renderDotsOutside={false}
-            responsive={{
-              desktop: {
-                breakpoint: {
-                  max: 3000,
-                  min: 1280,
-                },
-                items: 7,
-                partialVisibilityGutter: 40,
-              },
-              desk: {
-                breakpoint: {
-                  max: 1280,
-                  min: 1024,
-                },
-                items: 6,
-                partialVisibilityGutter: 40,
-              },
-              mobile: {
-                breakpoint: {
-                  max: 1024,
-                  min: 768,
-                },
-                items: 5,
-                partialVisibilityGutter: 30,
-              },
-              tablet: {
-                breakpoint: {
-                  max: 900,
-                  min: 768,
-                },
-                items: 4,
-                partialVisibilityGutter: 30,
-              },
-              small: {
-                breakpoint: {
-                  max: 768,
-                  min: 0
-                },
-                items: 3,
-                partialVisibilityGutter: 30,
-              }
-            }}
-            rewind={false}
-            rewindWithAnimation={false}
-            rtl={false}
-            shouldResetAutoplay
-            showDots={false}
-            sliderClass=""
-            slidesToSlide={1}
-            swipeable
-          >
-            {com.map((mov) => (
-              <Link to={{ pathname: `/movie/${mov.id}` }} key={mov.id}>
-                <div className="carou-we color-white">
-                  <img
-                    src={`https://image.tmdb.org/t/p/w500${mov.poster_path}`}
-                    alt=""
+            <Caros>
+                {com.map((mov) => (
+                  <CaroItems
+                    title={mov.title}
+                    id={mov.id}
+                    poster_path={mov.poster_path}
+                    vote_average={mov.vote_average}
+                    release_date={mov.release_date}
                   />
-                </div>
-                <div className="head-info">
-                  <span className="info pl-3">{mov.title}</span>
-                  <div className="container-fluid ratings">
-                    <small className="d-flex justify-content-center">
-                      <IoMdStar size={20} color="yellow" />
-                      {mov.vote_average}
-                    </small>
-                    <small className=" year">
-                      {mov.release_date.split("-")[0]}
-                    </small>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </Carousel>
+                ))}
+              </Caros>
             <h1>Action</h1>
-            <Carousel
-            additionalTransfrom={0}
-            arrows
-            autoPlay
-            autoPlaySpeed={2000}
-            centerMode={false}
-            className=""
-            containerClass="container-with-dots"
-            dotListClass=""
-            draggable
-            focusOnSelect={false}
-            infinite
-            itemClass="carousel"
-            keyBoardControl
-            minimumTouchDrag={80}
-            pauseOnHover
-            renderArrowsWhenDisabled={false}
-            renderButtonGroupOutside={false}
-            renderDotsOutside={false}
-            responsive={{
-              desktop: {
-                breakpoint: {
-                  max: 3000,
-                  min: 1280,
-                },
-                items: 7,
-                partialVisibilityGutter: 40,
-              },
-              desk: {
-                breakpoint: {
-                  max: 1280,
-                  min: 1024,
-                },
-                items: 6,
-                partialVisibilityGutter: 40,
-              },
-              mobile: {
-                breakpoint: {
-                  max: 1024,
-                  min: 768,
-                },
-                items: 5,
-                partialVisibilityGutter: 30,
-              },
-              tablet: {
-                breakpoint: {
-                  max: 900,
-                  min: 768,
-                },
-                items: 4,
-                partialVisibilityGutter: 30,
-              },
-              small: {
-                breakpoint: {
-                  max: 768,
-                  min: 0
-                },
-                items: 3,
-                partialVisibilityGutter: 30,
-              }
-            }}
-            rewind={false}
-            rewindWithAnimation={false}
-            rtl={false}
-            shouldResetAutoplay
-            showDots={false}
-            sliderClass=""
-            slidesToSlide={1}
-            swipeable
-          >
-            {gen.map((mov) => (
-              <Link to={{ pathname: `/movie/${mov.id}` }} key={mov.id}>
-                <div className="carou-we color-white">
-                  <img
-                    src={`https://image.tmdb.org/t/p/w500${mov.poster_path}`}
-                    alt=""
+            <Caros>
+                {gen.map((mov) => (
+                  <CaroItems
+                    title={mov.title}
+                    id={mov.id}
+                    poster_path={mov.poster_path}
+                    vote_average={mov.vote_average}
+                    release_date={mov.release_date}
                   />
-                </div>
-                <div className="head-info">
-                  <span className="info pl-3">{mov.title}</span>
-                  <div className="container-fluid ratings">
-                    <small className="d-flex justify-content-center">
-                      <IoMdStar size={20} color="yellow" />
-                      {mov.vote_average}
-                    </small>
-                    <small className=" year">
-                      {mov.release_date.split("-")[0]}
-                    </small>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </Carousel>
+                ))}
+              </Caros>
 </>
-          )}
-        </>
+        </div>
       
     </>
   );

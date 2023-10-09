@@ -57,7 +57,7 @@
   height: 100vh;
   width: 100%;
   z-index: 10;
-  background: linear-gradient(0deg, black, transparent);
+  background: linear-gradient(30deg, black, transparent);
   position: absolute;
 }
 
@@ -103,6 +103,7 @@
 }
 
 .desc-info h1 {
+  padding: 0;
   width: 80%;
 }
 .desc-info h1 {
@@ -245,6 +246,9 @@
   width: 100%;
   padding: 10px;
 }
+.add{
+  display: none;
+}
 @media screen and (max-width: 768px) {
   .click {
     font-size: 12px;
@@ -256,7 +260,8 @@
   .descc{
     width: 100%;
     
-    
+    height: 100%;
+    margin-top: 150px;
     padding: 10px;
   }
   .no-mov{
@@ -295,6 +300,7 @@
   .desc-info {
     position: relative;
     flex-direction: column;
+    height: 100%;
   }
   .home-page {
     height: 100%;
@@ -311,9 +317,7 @@
   }
   .btns{
     justify-content: center;
-  }
-  .btns button{
-    flex-grow: 1;
+    gap: 10px;
   }
   .home-page button {
     width: 150px;
@@ -345,7 +349,6 @@
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
     box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
   }
-  
   .descc h1 {
     font-size: 35px;
     width: 100%;
@@ -366,12 +369,6 @@
     
     z-index: 100;
     position: relative;
-  }
-  .descc button {
-    width: 40%;
-    margin-left: 5px;
-    font-size: 16px;
-    margin-top: 15px;
   }
   .desc-img {
     display: block;
@@ -441,11 +438,29 @@
   .desc-button1 span{
     font-size: 12px;
   }
+  .btns{
+    justify-content: start;
+    gap: 20px;
+  }
+  .add{
+    display: block;
+    text-align: left;
+    font-size: 36px;
+  }
+  .btns .desc-button1{
+    display: none;
+  }
 }
 
 @media screen and (max-width: 400px) {
   .btns .desc-button1{
     width: 50%;
+  }
+  .add{
+    display: block;
+  }
+  .btns .desc-button1{
+    display: none;
   }
 }
 @media screen and (max-width:380px) {
@@ -460,5 +475,11 @@
   }
   .overview{
     font-size: 12px;
+  }
+  .add{
+    display: block;
+  }
+  .btns .desc-button1{
+    display: none;
   }
 }

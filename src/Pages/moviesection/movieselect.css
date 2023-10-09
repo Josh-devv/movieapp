@@ -6,6 +6,7 @@
 }
 
 .head-app3 {
+  
 }
 .spins {
 }
@@ -72,7 +73,6 @@ justify-content: center;
 }
 .app3{
   display: flex;
-  justify-content: start;
   flex-wrap: wrap;
 }
 

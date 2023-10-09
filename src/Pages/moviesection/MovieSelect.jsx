@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { IoMdStar } from "react-icons/io";
 import { FaSpinner } from "react-icons/fa";
 import Navbar from "../../components/navbar/Navbar";
-import BeatLoader from 'react-spinners/BeatLoader'
+import BeatLoader from 'react-spinners/ClipLoader'
 import CaroItems from "../../components/carousel/CaroItems";
 import "./movieselect.css";
 

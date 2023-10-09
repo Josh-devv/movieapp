@@ -39,7 +39,7 @@
       transform: rotate(360deg);
     }
   }
-  .app2{
+  .head-a{
     display: flex;
     position: relative;
     flex-wrap: nowrap;  
@@ -47,4 +47,7 @@
   
 .app2 a:hover{
   text-decoration: none;
+}
+.label{
+  padding: 0 20px;
 }

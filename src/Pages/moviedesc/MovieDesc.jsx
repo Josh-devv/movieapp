@@ -5,6 +5,7 @@ import { useWatchlist } from "../../components/watchlist/WatchList";
 import { IoMdStar } from "react-icons/io";
 import ClockLoader from "react-spinners/CircleLoader";
 import { HiOutlinePlus } from "react-icons/hi";
+import {BsFillBookmarkStarFill} from 'react-icons/bs'
 import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
 import Popup from "../../components/popup/Popup";
@@ -139,7 +140,7 @@ export default function MovieDesc() {
       
       <>
       <Navbar />
-      
+
       <section className="desc-body">
         <div className="head-desc">
           <div className="desc-img">
@@ -203,6 +204,7 @@ export default function MovieDesc() {
                 <HiOutlinePlus />
                 <span>{add}</span>
               </button>
+              <BsFillBookmarkStarFill className="add" onClick={() => handleAddToWatchlist()} />
             </div>
             
             {showPopUp ? (
