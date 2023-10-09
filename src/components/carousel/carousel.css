@@ -10,7 +10,7 @@
 .carous{
   display: inline-flex;
   flex-direction: column;
-  width: 200px;
+  width: 180px;
   justify-content: center;
   align-items: center;
 }
@@ -75,9 +75,13 @@ span .rrr2{
   .carous{
     width: calc(100vw / 3);
   }
+  .c{
+    height: 250px;
+  }
 }
 @media screen and (max-width: 350px) {
   .carous{
-    width: calc(100vw / 3);
+    width: calc(100vw / 2);
   }
+  
 }
