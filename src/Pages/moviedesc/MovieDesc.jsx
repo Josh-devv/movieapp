@@ -61,14 +61,14 @@ export default function MovieDesc() {
       .then((response) => response.json())
       .then((data) => {
         setMdetails(data);
-        
+        setLoading(true)
       })
 
       .catch((error) => {
         console.error("Error fetching movie details:", error)
-        setLoading(true)
+        setLoading(false)
       })
-  }, [id]);
+  });
 
   //useEffect Code for lazy loading
   useEffect(() => {
@@ -115,7 +115,7 @@ export default function MovieDesc() {
       <>
         <Navbar />
 
-        <section className="desc-body">
+        <section className="desc-body ">
           <div className="head-desc">
             <div className="desc-img">
               {mdetails.backdrop_path ? (

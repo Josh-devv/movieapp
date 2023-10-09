@@ -49,7 +49,7 @@ export default function Watchlist() {
                   </div>
 
                 ) : (
-                  <div className="app3">
+                  <div className="app">
                     {watchlist.map((mov) => (
                       <CaroItems
                         title={mov.title}

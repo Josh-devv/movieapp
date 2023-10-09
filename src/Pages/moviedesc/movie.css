@@ -460,6 +460,35 @@
   }
 }
 
+.skeleto{
+  position: absolute;
+  width: 100%;
+  top: 10%;
+  padding: 50px;
+}
+.rr{
+  width: 500px;
+  height: 50px;
+  margin: 50px 0;
+}
+.rr1{
+  width: 30%;
+  margin: 10px 0;
+} 
+.rr2{
+  width: 80%;
+  margin: 10px 0;
+}
+.rr3{
+  width: 70%;
+  margin: 10px 0;
+}
+.rr3:last-child{
+  width: 20%;
+}
+@media screen and (max-width: 768px) {
+  
+
 .rr{
   height: 200px;
   width: 150px;
@@ -476,8 +505,11 @@
 
 .skeleto{
   margin-top: 200px;
+  padding: 0;
+  position: relative;
 }
 .skeleto span{
   margin: 10px;
-  z-index: 10000000;
+  z-index: 1000;
+}
 }

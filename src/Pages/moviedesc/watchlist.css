@@ -1,7 +1,28 @@
-.watch{
-    display: flex;
-    flex-wrap: nowrap;
-    padding: 20px;
+.app{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  justify-content: space-evenly;
+  margin: 0;
+}
+.app a{
+  flex: 1;
+  min-width: 150px;
+  max-width: 200px;
+  margin: 20px 0;
+  justify-self: start;
+}
+.app a img{
+  max-width: 120px;
+}
+.app a .content{
+  max-width: 120px;
+}
+@media screen and (max-width: 450px) {
+  .app a{
+    min-width: 100px;
+    max-width: 105px;
+  }
 }
 .watch a{
     height: 200px;
@@ -16,7 +37,11 @@
   }
   .wat{
     width: 100%;
-    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .wat a{
+    flex-shrink: 1;
   }
   .app5{
     width: 100%;
@@ -63,7 +88,7 @@
         justify-self: start;
     }
   }
-  .gen6 .app3{
+  .gen6 .wat{
     justify-content: start;
     margin: 0;
     padding: 20px;
