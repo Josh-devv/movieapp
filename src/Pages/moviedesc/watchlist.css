@@ -20,8 +20,8 @@
 }
 @media screen and (max-width: 450px) {
   .app a{
-    min-width: 100px;
-    max-width: 105px;
+    min-width: 110px;
+    max-width: 120px;
   }
 }
 .watch a{
