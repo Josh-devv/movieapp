@@ -13,6 +13,7 @@ import "./genre.css"
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import Footer from "../../components/footer/Footer";
 
 
 export default function MovieSelect() {
@@ -42,6 +43,7 @@ export default function MovieSelect() {
             .then((json) => setRom(json.results))
             .catch((error) => console.error("Error fetching romance movies:", error));
         }
+        window.scrollTo(0, 0);
       })
       .catch((error) => console.error("Error fetching genre list:", error));
   }, []);
@@ -136,7 +138,7 @@ export default function MovieSelect() {
               </Caros>
 
 
-            <h1 className="container-fluid pl-4 pt-4 pb-3">Romance</h1>
+            <h1 className="container-fluid pl-4 pt-4 pb-3">Action</h1>
             <Caros>
                 {drama.map((mov) => (
                   <CaroItems
@@ -149,7 +151,7 @@ export default function MovieSelect() {
                 ))}
               </Caros>
 
-            <h1>Action</h1>
+            <h1>Adventures</h1>
             <Caros>
                 {com.map((mov) => (
                   <CaroItems
@@ -161,7 +163,7 @@ export default function MovieSelect() {
                   />
                 ))}
               </Caros>
-            <h1>Action</h1>
+            <h1>Thriller</h1>
             <Caros>
                 {gen.map((mov) => (
                   <CaroItems
@@ -175,7 +177,7 @@ export default function MovieSelect() {
               </Caros>
 </>
         </div>
-      
+      <Footer />
     </>
   );
 }

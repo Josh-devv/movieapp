@@ -10,7 +10,7 @@ function CaroItems(props) {
 
   return (
     <>
-      <Link style={{display: load ? 'block' : "none"}}
+      <Link style={{display: load ? 'flex' : "none"}}
         className="carous"
         to={{ pathname: `/movie/${props.id}` }}
         key={props.id}

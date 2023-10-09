@@ -5,28 +5,23 @@ import { useWatchlist } from "../../components/watchlist/WatchList";
 import { IoMdStar } from "react-icons/io";
 import ClockLoader from "react-spinners/CircleLoader";
 import { HiOutlinePlus } from "react-icons/hi";
-import {BsFillBookmarkStarFill} from 'react-icons/bs'
+import { BsFillBookmarkStarFill } from "react-icons/bs";
 import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
 import Popup from "../../components/popup/Popup";
 import Caros from "../../components/carousel/Carousel";
 import CaroItems from "../../components/carousel/CaroItems";
-import BeatLoader from 'react-spinners/ClipLoader'
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
-
+import BeatLoader from "react-spinners/ClipLoader";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import '../../Anim/animations.css'
+import "../../Anim/animations.css";
 import "./movie.css";
 
-
-
-
 export default function MovieDesc() {
-
-  const [add, setAdded] = useState("Add to WatchList")
+  const [add, setAdded] = useState("Add to WatchList");
   const loc = useLocation(); //to bring the location of the page
   const { id } = useParams(); //taking the id from the routes using useParams which passed thru the routes
   const [mdetails, setMdetails] = useState([]);
@@ -38,36 +33,23 @@ export default function MovieDesc() {
   const [clicked, setClicked] = useState(false);
   const [showPopUp, setShowPopUp] = useState(false);
 
-
-
-
-
-
   const handleAddToWatchlist = () => {
     addToWatchlist(mdetails);
     setClicked(true);
 
-    setShowPopUp(true)
+    setShowPopUp(true);
 
     setTimeout(() => {
-      setShowPopUp(false)
+      setShowPopUp(false);
     }, 1500);
-
-  }
-
+  };
 
   const disStyle = {
-    backgroundColor: 'gray',
-    cursor: 'not-allowed',
-    color: 'white'
-  }
-  
-  useEffect(()=>{
-    setLoading(true)
-        setTimeout(()=>{
-          setLoading(false)
-        }, 1000)
-  },[id])
+    backgroundColor: "gray",
+    cursor: "not-allowed",
+    color: "white",
+  };
+
 
   //for all movies for the unique id to be found
   useEffect(() => {
@@ -80,12 +62,13 @@ export default function MovieDesc() {
       .then((data) => {
         setMdetails(data);
         
-
       })
 
-      .catch((error) => console.error("Error fetching movie details:", error));
+      .catch((error) => {
+        console.error("Error fetching movie details:", error)
+        setLoading(true)
+      })
   }, [id]);
-  
 
   //useEffect Code for lazy loading
   useEffect(() => {
@@ -116,12 +99,11 @@ export default function MovieDesc() {
     )
       .then((response) => response.json())
       .then((json) => setWeekly(json.results))
-      .catch((error) => console.error("Error fetching movie details:", error));
+      .catch((error) => setLoading(false));
 
     window.scrollTo(0, 0);
     //for it to go back to the top of the page onClick of any Link
   }, [loc]); //by passing in the useLocation hook
-
 
   const override = {
     margin: "0 auto",
@@ -130,117 +112,126 @@ export default function MovieDesc() {
 
   return (
     <>
-    {
-      loading ? (
-        <div className=" spin ">
-        <BeatLoader color="white" cssOverride={override} loading={loading} size={50} />
-        </div>
-      ) : (
-
-      
       <>
-      <Navbar />
+        <Navbar />
 
-      <section className="desc-body">
-        <div className="head-desc">
-          <div className="desc-img">
-            {mdetails.backdrop_path ? (
-              <img
-                src={`https://image.tmdb.org/t/p/original${mdetails.backdrop_path}`}
-                width={100}
-                className="iii"
-              />
-            ) : (
-              <img
-                src={`https://image.tmdb.org/t/p/original${mdetails.poster_path}`}
-                width={100}
-                className="iii"
-              />
-            )}
-          </div>
-          <div className="dark"></div>
-        </div>
-
-        <div className="container-fluid desc-info">
-          <div className="descc">
-            <div className="desc-carou color-white">
-              <img
-                src={`https://image.tmdb.org/t/p/w500${mdetails.poster_path}`}
-                alt=""
-              />
-            </div>
-
-            <h1 className="desc-name">{mdetails.title}</h1>
-            <span className="det">
-              <small className="rating">
-                <IoMdStar size={20} color="yellow" />
-                {typeof mdetails.vote_average === "number"
-                  ? mdetails.vote_average.toFixed(1)
-                  : <span>N/A</span> }
-              </small>
-              |
-              {mdetails.release_date && mdetails.release_date.split("-")[0] ? (
-                <small className="year ml-2 mr-2">
-                  {mdetails.release_date.split("-")[0]}
-                </small>
+        <section className="desc-body">
+          <div className="head-desc">
+            <div className="desc-img">
+              {mdetails.backdrop_path ? (
+                <img
+                  src={`https://image.tmdb.org/t/p/original${mdetails.backdrop_path}`}
+                  width={100}
+                  className="iii"
+                />
               ) : (
-                <small className="nope">Release date not available</small>
+                <img
+                  src={`https://image.tmdb.org/t/p/original${mdetails.poster_path}`}
+                  width={100}
+                  className="iii"
+                />
               )}
-              |<small className="mins ml-2">{mdetails.runtime}&nbsp;mins</small>
-            </span>
-
-            <span className="overview">{mdetails.overview}</span>
-            <span className="tagline mt-3">
-              <i>"{mdetails.tagline}"</i>
-            </span>
-
-            <div className="btns d-flex">
-              <button className="desc-button"> Watch Now</button>
-
-              <button
-                className="desc-button1"
-                onClick={() => handleAddToWatchlist()}
-              >
-                <HiOutlinePlus />
-                <span>{add}</span>
-              </button>
-              <BsFillBookmarkStarFill className="add" onClick={() => handleAddToWatchlist()} />
             </div>
-            
-            {showPopUp ? (
-              <div className="popup">
-                <Popup />
-              </div>
-            ) : (
-              null
-            )}
+
+            <div className="dark"></div>
           </div>
-        </div>
 
-        <div>
-              <h5 className="container-fluid genre pl-4 pt-4 pb-3">
-                Top Rated Movies
-              </h5>
-              <Caros>
-                {weekly.map((mov) => (
-                  <CaroItems
-                    title={mov.title}
-                    id={mov.id}
-                    poster_path={mov.poster_path}
-                    vote_average={mov.vote_average}
-                    release_date={mov.release_date}
-                  />
-                ))}
-              </Caros>
-              
+          <div className="container-fluid desc-info">
+            <div className="descc" style={{display: loading ? 'flex' : "none"}}>
+              <div className="desc-carou color-white">
+                <img
+                  onLoad={() => {
+                    setLoading(true);
+                  }}
+                  src={`https://image.tmdb.org/t/p/w500${mdetails.poster_path}`}
+                  alt=""
+                />
+              </div>
+
+              <h1 className="desc-name">{mdetails.title}</h1>
+              <span className="det">
+                <small className="rating">
+                  <IoMdStar size={20} color="yellow" />
+                  {typeof mdetails.vote_average === "number" ? (
+                    mdetails.vote_average.toFixed(1)
+                  ) : (
+                    <span>N/A</span>
+                  )}
+                </small>
+                |
+                {mdetails.release_date &&
+                mdetails.release_date.split("-")[0] ? (
+                  <small className="year ml-2 mr-2">
+                    {mdetails.release_date.split("-")[0]}
+                  </small>
+                ) : (
+                  <small className="nope">Release date not available</small>
+                )}
+                |
+                <small className="mins ml-2">
+                  {mdetails.runtime}&nbsp;mins
+                </small>
+              </span>
+
+              <span className="overview">{mdetails.overview}</span>
+              <span className="tagline mt-3">
+                <i>"{mdetails.tagline}"</i>
+              </span>
+
+              <div className="btns d-flex">
+                <button className="desc-button"> Watch Now</button>
+
+                <button
+                  className="desc-button1"
+                  onClick={() => handleAddToWatchlist()}
+                >
+                  <HiOutlinePlus />
+                  <span>{add}</span>
+                </button>
+                <BsFillBookmarkStarFill
+                  className="add"
+                  onClick={() => handleAddToWatchlist()}
+                />
+              </div>
+
+              {showPopUp ? (
+                <div className="popup">
+                  <Popup />
+                </div>
+              ) : null}
             </div>
+            </div>
+            <div className="skeleto" style={{display: !loading ? 'block' : 'none'}}>
+              <SkeletonTheme baseColor="#202020" highlightColor="#444">
+            <Skeleton className="rr" />
+            <Skeleton className="rr1" />
+            <Skeleton className="rr2" />
+            <Skeleton className="rr3" />
+            <Skeleton className="rr3" />
+          </SkeletonTheme>
+            </div>
+          
 
-        <Footer />
-      </section>
+          <div>
+            <h5 className="container-fluid genre pl-4 pt-4 pb-3">
+              Top Rated Movies
+            </h5>
+            <Caros>
+              {weekly.map((mov) => (
+                <CaroItems
+                  title={mov.title}
+                  id={mov.id}
+                  poster_path={mov.poster_path}
+                  vote_average={mov.vote_average}
+                  release_date={mov.release_date}
+                />
+              ))}
+            </Caros>
+          </div>
+
+          <Footer />
+        </section>
       </>
-      )
-    }
-     
     </>
   );
 }

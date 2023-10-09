@@ -7,7 +7,7 @@ export default function Footer() {
       @josh-devv
       <div>
         {" "}
-        <small>copyright reserved</small>
+        <span>&copy;copyright reserved</span>
       </div>
     </section>
   );

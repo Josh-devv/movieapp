@@ -175,7 +175,7 @@ export default function MovieSection() {
 
             <div className="caro-head-style">
               <h5 className="container-fluid genre pl-4 pt-4 pb-3">
-                Thriller movies
+                Romance movies
               </h5>
 
               <Caros>

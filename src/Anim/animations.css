@@ -78,20 +78,19 @@
 }
 @keyframes expand {
   0% {
-    width: 30%;
+    width: 50%;
   }
   30% {
-    width: 30%;
+    width: 50%;
   }
   100% {
-    width: 30%;
+    width: 50%;
     color: black;
   }
 }
 @keyframes down {
   0% {
     top: 90%;
-    width: 30%;
   }
   100% {
     top: 100%;

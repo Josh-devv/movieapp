@@ -451,3 +451,33 @@
     display: none;
   }
 }
+
+@media screen and (max-width:320px) {
+  .desc-body .content{
+    width: 100px;
+  }
+  .desc-body .react-multi-carousel-track{
+  }
+}
+
+.rr{
+  height: 200px;
+  width: 150px;
+}
+.rr1{
+  width: 250px;
+}
+.rr2{
+  width: 100px;
+}
+.rr3{
+  width: 200px;
+}
+
+.skeleto{
+  margin-top: 200px;
+}
+.skeleto span{
+  margin: 10px;
+  z-index: 10000000;
+}
