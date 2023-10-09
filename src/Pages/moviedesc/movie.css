@@ -43,7 +43,20 @@
   position: absolute;
 }
 .rating, .year, .mins{
-  padding: 20px;
+  display: inline-flex;
+}
+.rating span{
+  align-self: center;
+}
+.det{
+  display: flex;
+  gap: 10px;
+}
+.nope{
+  display: inline-flex;
+  height: 23px;
+  justify-content: center;
+  align-items: center;
 }
 .btns {
   width: 100%;
@@ -195,57 +208,12 @@
 }
 .rating{
   color: white;
-  padding: 3px 5px;
-  margin-right: 10px;
-  border: 1px solid white;
 }
 
 .descc{
   position: relative;
 }
-.app5{
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  justify-content: center;
-}
-.no-mov{
-  color: gray;
-  font-size: 20px;
-  text-align: center;
-  width: 100%;
-  justify-content: center;
-  display: flex;
-  position: absolute;
-  font-weight: lighter;
-  top: 50%;
-}
-.app6{
-  width: 100%;
-  margin-left: 20px;
-  display: flex;
-  flex-wrap: wrap;
-}
-.genre6{
-  color: white;
-  width: 10px;
-  font-size: 30px;
-}
-.gen6{
-  min-height: 100vh;
-  background-color: black;
-}
-.head-wat{
-  width: 100%;
-  display: flex;
-  justify-content: start;
-  flex-wrap: wrap;
-}
-.wat{
-  width: 100%;
-  padding: 10px;
-}
+
 .add{
   display: none;
 }

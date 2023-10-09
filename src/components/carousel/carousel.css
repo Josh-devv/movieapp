@@ -4,7 +4,9 @@
     z-index: -1;
     padding: 0 10px;
   }
-
+.c{
+  height: 300px;
+}
 .carous{
   display: inline-flex;
   flex-direction: column;
@@ -53,6 +55,9 @@ span .rrr2{
 @media screen and (max-width:768px) {
   .details{
     display: none;
+  }
+  .date{
+    font-size: 10px;
   }
 }
 @media screen and (max-width:768px) and (min-width: 500px){

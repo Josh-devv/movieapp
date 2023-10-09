@@ -32,6 +32,11 @@ export default function Navbar() {
     e.preventDefault()
     let inp = document.querySelector('.uu')
     window.location.href = `/search/${inp.value}`
+    if (inp.textContent == null || inp.textContent == '') {
+      console.log('empty')
+      
+    }
+   
   }
 
   const handleSubmit1 = (e) => {
@@ -73,7 +78,6 @@ export default function Navbar() {
             <input className="uu" type="text" value={searchQuery}
               onChange={(e) => {
                 setSearchQuery(e.target.value)
-
               }}
               placeholder="Search for something"
             />

@@ -9,6 +9,7 @@ import Watchlist from "./Pages/moviedesc/Watchlist";
 import Genre from './Pages/moviedesc/Genre'
 
 import "./App.css";
+import Search from "./Pages/search/Search";
 
 
 
@@ -24,6 +25,7 @@ const App = () => {
             <Route exact path="/" Component={MovieSection} />
             <Route path="/movies" Component={MovieSelect} />
             <Route path="/movie/:id" Component={MovieDesc} />
+            <Route path="/search/" Component={Search} />
             <Route path="/search/:title" Component={SearchPage} />
             <Route path="/watchlist" Component={Watchlist} />
             

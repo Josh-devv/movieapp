@@ -16,10 +16,6 @@ function CaroItems(props) {
         key={props.id}
       >
         <img
-          onLoad={() => {
-            setLoad(true);
-            console.log(load);
-          }}
           src={`https://image.tmdb.org/t/p/w500${props.poster_path}`}
           alt=""
         />

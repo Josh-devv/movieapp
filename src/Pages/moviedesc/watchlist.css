@@ -1,0 +1,67 @@
+.watch{
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 20px;
+}
+.watch a{
+    height: 200px;
+    width: 150px;
+}
+.head-wat{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .wat{
+    width: 100%;
+    padding: 10px;
+  }
+  .app5{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  .no-mov{
+    color: gray;
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    position: absolute;
+    font-weight: lighter;
+    top: 50%;
+  }
+  .app6{
+    width: 100%;
+    margin-left: 20px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .genre6{
+    color: white;
+    width: 10px;
+    font-size: 30px;
+  }
+  .gen6{
+    min-height: 100vh;
+    background-color: black;
+  }
+  .ap{
+    display: flex;
+    flex-wrap: nowrap;   
+    padding: 20px;
+    justify-content: start;
+  }
+  @media screen and (max-width: 800px) {
+    .ap a .content .title {
+        width: 70%;
+        justify-self: start;
+    }
+    .app3{
+    }
+  }

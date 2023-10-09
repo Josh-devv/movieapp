@@ -171,12 +171,12 @@ export default function MovieDesc() {
             </div>
 
             <h1 className="desc-name">{mdetails.title}</h1>
-            <span>
+            <span className="det">
               <small className="rating">
                 <IoMdStar size={20} color="yellow" />
                 {typeof mdetails.vote_average === "number"
                   ? mdetails.vote_average.toFixed(1)
-                  : "N/A"}
+                  : <span>N/A</span> }
               </small>
               |
               {mdetails.release_date && mdetails.release_date.split("-")[0] ? (
@@ -184,7 +184,7 @@ export default function MovieDesc() {
                   {mdetails.release_date.split("-")[0]}
                 </small>
               ) : (
-                <small className="">Release date not available</small>
+                <small className="nope">Release date not available</small>
               )}
               |<small className="mins ml-2">{mdetails.runtime}mins</small>
             </span>

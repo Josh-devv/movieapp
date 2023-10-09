@@ -12,7 +12,7 @@ function Caros({ children }) {
       autoPlay
       autoPlaySpeed={2000}
       centerMode={false}
-      className=""
+      className="c"
       containerClass="container-with-dots"
       dotListClass=""
       draggable

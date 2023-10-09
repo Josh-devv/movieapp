@@ -7,6 +7,7 @@ import { useWatchlist } from "../../components/watchlist/WatchList";
 import Navbar from "../../components/navbar/Navbar";
 import BeatLoader from 'react-spinners/ClipLoader'
 import CaroItems from "../../components/carousel/CaroItems";
+import './watchlist.css'
 
 export default function Watchlist() {
 
@@ -48,9 +49,7 @@ export default function Watchlist() {
                   </div>
 
                 ) : (
-                  <div className="app3">
-                
-                  
+                  <div className="ap">
                     {watchlist.map((mov) => (
                       <CaroItems
                         title={mov.title}

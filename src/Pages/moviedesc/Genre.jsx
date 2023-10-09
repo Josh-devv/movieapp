@@ -121,6 +121,7 @@ export default function MovieSelect() {
       <Navbar />
       <div className="ge">
             <>
+            
             <h1 className="container-fluid pl-4 pt-4 pb-3">Romance</h1>
             <Caros>
                 {rom.map((mov) => (
