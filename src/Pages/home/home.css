@@ -150,6 +150,9 @@
     font-size: 90px;
     padding: 0;
   }
+  .home-head p{
+    font-size: 18px;
+  }
   @media screen and (max-width: 900px) {
     .home-head h1{
       font-size: 70px;
@@ -167,6 +170,9 @@
       width: 100%;
       margin-top: auto;
       margin-bottom: auto;
+    }
+    .home-head p{
+      font-size: 14px;
     }
     .home-page a{
       display: block;
