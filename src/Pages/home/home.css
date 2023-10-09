@@ -160,8 +160,8 @@
   }
   @media screen and (max-width:768px) {
     .home-head h1{
-      font-size: 40px;
-      padding-top: 100px;
+      font-size: 30px;
+      padding-top:20px;
       width: 100%;;
       text-align: center;
     }
@@ -179,5 +179,18 @@
       margin: 0 auto;
       font-size: 50px;
       width: 80%;
+    }
+  }
+  @media screen and (max-width:500px) {
+    .home-page a{
+      font-size: 0px;
+    }
+  }
+  @media screen and (max-width:300px) {
+    .home-page h1{
+      font-size: 8vw;
+    }
+    .home-head p{
+      font-size: 10px;
     }
   }
