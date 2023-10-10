@@ -64,7 +64,7 @@ export default function MovieDesc() {
         setLoading(false)
       })
 
-      window.scrollTo(0, 0);
+      
   });
 
   //useEffect Code for lazy loading
