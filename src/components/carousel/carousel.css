@@ -3,6 +3,7 @@
     width: 100%;
     z-index: -1;
     padding: 0 10px;
+    justify-self: center;
   }
 .c{
   height: 300px;
@@ -43,6 +44,14 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
+.skeletons{
+  position: absolute;
+  transform: translate(-55%, -5%);
+  top: 0%;
+  left: 70%;
+  margin: 0 auto;
+  width: 100%;
 }
 span .rrr{
   width: 80%;

@@ -71,3 +71,6 @@
   top: 50%;
   left: 50%;
 }
+.hea .skeleton{
+  display: none;
+}
