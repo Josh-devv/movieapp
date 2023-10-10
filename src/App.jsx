@@ -25,7 +25,7 @@ const App = () => {
             <Route exact path="/" Component={MovieSection} />
             <Route path="/movies" Component={MovieSelect} />
             <Route path="/movie/:id" Component={MovieDesc} />
-            <Route path="/search/" Component={Search} />
+            <Route path="/search/" Component={Search } />
             <Route path="/search/:title" Component={SearchPage} />
             <Route path="/watchlist" Component={Watchlist} />
             

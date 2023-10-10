@@ -64,8 +64,8 @@ span .rrr2{
   }
 }
 @media screen and (max-width:768px) and (min-width: 500px){
-  .carous img{
-    width: calc(100vw / 4.5);
+  .carous {
+    width: calc(100vw / 4);
     height: 80%;
   }
   .carous{

@@ -47,7 +47,7 @@ export default function MovieSelect() {
               <BeatLoader color="white" cssOverride={override} loading={loading} size={50} />
             </div>
           ) : (
-            <div className="app3">
+            <div className="appp">
               
                 {all.map((mov) => (
                   <CaroItems

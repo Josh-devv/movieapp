@@ -28,7 +28,7 @@ function CaroItems(props) {
           <div className="rat">
             <small className="details">
               <IoMdStar size={20} color="yellow" />
-              {props.vote_average}
+              {props.vote_average.toFixed(1)}
             </small>
             <small className="date">{props.release_date.split("-")[0]}</small>
           </div>

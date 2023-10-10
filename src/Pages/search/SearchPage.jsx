@@ -63,6 +63,9 @@ export default function SearchPage() {
                 release_date={mov.release_date} />
                 ))}
           </Caros>
+          {
+            searchResults.length == 0 && <div className="match">No Items Match Your Search</div>
+          }
         </div>
 
         <div>

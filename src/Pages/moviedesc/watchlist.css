@@ -93,3 +93,13 @@
     margin: 0;
     padding: 20px;
   }
+
+
+  .head-wat .appp{
+    justify-content: start;
+  }
+  @media screen and (max-width: 768px) {
+    .head-wat .app{
+      max-width: 120px;
+    }
+  }

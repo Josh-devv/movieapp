@@ -22,8 +22,12 @@ export default function MovieSelect() {
   const [com, setCom] = useState([]);
   const [drama, setDrama] = useState([]);
   const apiKey = "543c959c84a2edaf19d168f7a042f6eb";
+  const [load, setLoad] = useState(false)
   const pages = 5;
 
+  window.onload = () => {
+    window.scrollTo(0, 0);
+  }
 
   useEffect(() => {
     fetch(
@@ -33,7 +37,7 @@ export default function MovieSelect() {
       .then((json) => {
         // Find the genre ID for "Romance"
         const gen= json.genres.find((genre) => genre.name === "Romance");
-  
+        setLoad(true)
         if (gen) {
           // Now you can use the genre ID to fetch romance movies
           fetch(
@@ -43,9 +47,8 @@ export default function MovieSelect() {
             .then((json) => setRom(json.results))
             .catch((error) => console.error("Error fetching romance movies:", error));
         }
-        window.scrollTo(0, 0);
       })
-      .catch((error) => console.error("Error fetching genre list:", error));
+      .catch((error) => setLoad(false));
   }, []);
 
   useEffect(() => {
@@ -130,6 +133,7 @@ export default function MovieSelect() {
                   <CaroItems
                     title={mov.title}
                     id={mov.id}
+                    load={load}
                     poster_path={mov.poster_path}
                     vote_average={mov.vote_average}
                     release_date={mov.release_date}

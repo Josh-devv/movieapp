@@ -13,7 +13,6 @@
   display: flex;
   align-items: center;
   margin-top: 25px;
-  margin-left: 10px;
 }
 .spins {
 }
@@ -64,7 +63,7 @@
   display: flex;
   position: relative;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   flex-wrap: wrap;
   
   
@@ -80,11 +79,6 @@ justify-content: center;
   padding: 25px 0px 0px 20px;
   font-size: 20px;
   color: white;
-}
-.app3{
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
 }
 
 @media screen and (max-width: 580px) {
@@ -110,20 +104,20 @@ justify-content: center;
   }
   
 }
-@media screen and (max-width: 350px) {
-  .app3{
-    display: flex;
-    overflow: hidden;
-    justify-content: space-evenly;
-    margin: 0;
-    padding: 0;
-    gap: 30px;
-  }
-  .app3 a{
-    max-width: 100px;
-  }
-  .head-app3{
-    justify-content: start;
-    margin: 0;
+.appp{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.appp a{
+  flex: 1;
+  min-width: 150px;
+  margin: 20px 0;
+  max-width: 170px;
+}
+@media screen and (max-width: 600px) {
+  .appp a{
+    min-width: 120px;
+    max-width: 150px;
   }
 }
