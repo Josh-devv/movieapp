@@ -10,7 +10,7 @@ function Caros({ children }) {
       additionalTransfrom={0}
       arrows
       autoPlay
-      autoPlaySpeed={200000}
+      autoPlaySpeed={2000}
       centerMode={false}
       className="c"
       containerClass="container-with-dots"
