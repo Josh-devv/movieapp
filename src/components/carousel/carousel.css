@@ -99,7 +99,7 @@ span .rrr2{
 }
 @media screen and (max-width: 580px){
   .skeletons{
-    transform: translate(-50%, -5);
+    left: 75%;
   }
   span .rrr2, span .rrr1{
     display: none;
