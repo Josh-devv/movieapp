@@ -1,15 +1,9 @@
 import React, { useRef }from "react";
-import { useEffect, useState, useLayoutEffect } from "react";
+import { useEffect, useState } from "react";
 import Footer from "../../components/footer/Footer";
-import ClockLoader from "react-spinners/CircleLoader";
 import Home from "../home/Home";
-import { IoMdStar } from "react-icons/io";
-import { Link } from "react-router-dom";
-import UpComing from '../../components/upcoming/UpComing'
-import Carousel from "react-multi-carousel";
 import BeatLoader from 'react-spinners/ClipLoader'
 import "react-multi-carousel/lib/styles.css";
-import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import Caros from "../../components/carousel/Carousel";
 import CaroItems from "../../components/carousel/CaroItems";
@@ -95,7 +89,7 @@ export default function MovieSection() {
   //loading style
   const override = {
     margin: "0 auto",
-    borderColor: "red",
+    borderColor: "white",
   };
   const newride ={
     color: "white",

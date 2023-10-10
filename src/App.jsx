@@ -15,12 +15,10 @@ import Search from "./Pages/search/Search";
 
 const App = () => {
   return (
-    <>
     
-      <WatchlistProvider>
-        
-        <Router>
-          
+    <>
+      <WatchlistProvider> 
+        <Router>          
           <Routes>
             <Route exact path="/" Component={MovieSection} />
             <Route path="/movies" Component={MovieSelect} />
@@ -28,9 +26,7 @@ const App = () => {
             <Route path="/search/" Component={Search } />
             <Route path="/search/:title" Component={SearchPage} />
             <Route path="/watchlist" Component={Watchlist} />
-            
-            <Route path="/genre" Component={Genre}/>
-            
+            <Route path="/genre" Component={Genre}/> 
           </Routes>
         </Router>
       </WatchlistProvider>

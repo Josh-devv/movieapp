@@ -1,9 +1,7 @@
-import React, { useEffect, useState, useRef, useLayoutEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useLocation, useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
 import { useWatchlist } from "../../components/watchlist/WatchList";
 import { IoMdStar } from "react-icons/io";
-import ClockLoader from "react-spinners/CircleLoader";
 import { HiOutlinePlus } from "react-icons/hi";
 import { BsFillBookmarkStarFill } from "react-icons/bs";
 import Footer from "../../components/footer/Footer";
@@ -11,11 +9,8 @@ import Navbar from "../../components/navbar/Navbar";
 import Popup from "../../components/popup/Popup";
 import Caros from "../../components/carousel/Carousel";
 import CaroItems from "../../components/carousel/CaroItems";
-import BeatLoader from "react-spinners/ClipLoader";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "../../Anim/animations.css";
 import "./movie.css";
@@ -68,6 +63,8 @@ export default function MovieDesc() {
         console.error("Error fetching movie details:", error)
         setLoading(false)
       })
+
+      window.scrollTo(0, 0);
   });
 
   //useEffect Code for lazy loading
@@ -201,14 +198,16 @@ export default function MovieDesc() {
               ) : null}
             </div>
             </div>
+
+            
             <div className="skeleto" style={{display: !loading ? 'block' : 'none'}}>
               <SkeletonTheme baseColor="#202020" highlightColor="#444">
-            <Skeleton className="rr" />
-            <Skeleton className="rr1" />
-            <Skeleton className="rr2" />
-            <Skeleton className="rr3" />
-            <Skeleton className="rr3" />
-          </SkeletonTheme>
+                <Skeleton className="rr" />
+                <Skeleton className="rr1" />
+                <Skeleton className="rr2" />
+                <Skeleton className="rr3" />
+                <Skeleton className="rr3" />
+              </SkeletonTheme>
             </div>
           
 
